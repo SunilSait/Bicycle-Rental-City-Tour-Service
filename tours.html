@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join PedalCity's expert-led guided city tours. Heritage rides, sunset coastal tours, street food trails, and full-day adventures with group pricing discounts.">
+    <title>Guided Tours | PedalCity Bicycle Rental & City Tours</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="main-nav"></div>
+
+<section class="page-header" aria-label="Tours Header">
+    <div class="page-header-bg"><img src="assets/images/banner-tours.jpg" alt="Guided cycling tour along scenic route"></div>
+    <div class="page-header-overlay"></div>
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Tours</span></div>
+        <h1>Guided City Tours</h1>
+        <p>Expert-led cycling tours that reveal the heart and soul of the city. Choose your adventure.</p>
+    </div>
+</section>
+
+<!-- TOUR DETAILS — ALTERNATING LAYOUT -->
+<section class="section">
+    <div class="container">
+        <!-- Tour 1: Heritage Walk -->
+        <div class="tour-detail-row animate-on-scroll">
+            <div class="tour-detail-img"><img src="assets/images/tour-heritage.jpg" alt="Heritage district cycling tour" loading="lazy"></div>
+            <div class="tour-detail-info">
+                <span class="badge badge-primary" style="margin-bottom:0.75rem;">Most Popular</span>
+                <h3>Heritage District Tour</h3>
+                <p>Pedal through centuries of history. Visit ancient temples, colonial-era buildings, and vibrant markets with our expert local guide who brings every story to life.</p>
+                <div class="tour-detail-meta">
+                    <div class="tour-detail-meta-item"><i class="fas fa-clock"></i> 3 Hours</div>
+                    <div class="tour-detail-meta-item"><i class="fas fa-ruler-horizontal"></i> 12 km</div>
+                    <div class="tour-detail-meta-item"><i class="fas fa-signal"></i> Easy</div>
+                </div>
+                <div class="card-price" style="margin-bottom:1.25rem;">₹499 <span>/ person</span></div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book This Tour</a>
+            </div>
+        </div>
+        <!-- Tour 2: Sunset Ride -->
+        <div class="tour-detail-row reverse animate-on-scroll">
+            <div class="tour-detail-img"><img src="assets/images/tour-sunset.jpg" alt="Sunset coastal cycling ride" loading="lazy"></div>
+            <div class="tour-detail-info">
+                <h3>Sunset Coastal Ride</h3>
+                <p>Chase the golden hour along the waterfront. This scenic evening ride takes you through coastal paths with stunning ocean views and sea breeze.</p>
+                <div class="tour-detail-meta">
+                    <div class="tour-detail-meta-item"><i class="fas fa-clock"></i> 2 Hours</div>
+                    <div class="tour-detail-meta-item"><i class="fas fa-ruler-horizontal"></i> 8 km</div>
+                    <div class="tour-detail-meta-item"><i class="fas fa-signal"></i> Easy</div>
+                </div>
+                <div class="card-price" style="margin-bottom:1.25rem;">₹399 <span>/ person</span></div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book This Tour</a>
+            </div>
+        </div>
+        <!-- Tour 3: Food Trail -->
+        <div class="tour-detail-row animate-on-scroll">
+            <div class="tour-detail-img"><img src="assets/images/tour-food.jpg" alt="Street food cycling tour through markets" loading="lazy"></div>
+            <div class="tour-detail-info">
+                <h3>Street Food Trail</h3>
+                <p>A culinary cycling adventure through the city's best food streets. Taste authentic local delicacies at hidden gems hand-picked by our guides.</p>
+                <div class="tour-detail-meta">
+                    <div class="tour-detail-meta-item"><i class="fas fa-clock"></i> 4 Hours</div>
+                    <div class="tour-detail-meta-item"><i class="fas fa-ruler-horizontal"></i> 10 km</div>
+                    <div class="tour-detail-meta-item"><i class="fas fa-utensils"></i> 6 Food Stops</div>
+                </div>
+                <div class="card-price" style="margin-bottom:1.25rem;">₹599 <span>/ person</span></div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book This Tour</a>
+            </div>
+        </div>
+        <!-- Tour 4: Full-Day Explorer -->
+        <div class="tour-detail-row reverse animate-on-scroll">
+            <div class="tour-detail-img"><img src="assets/images/tour-fullday.jpg" alt="Full-day cycling adventure through countryside" loading="lazy"></div>
+            <div class="tour-detail-info">
+                <span class="badge badge-success" style="margin-bottom:0.75rem;">Best Value</span>
+                <h3>Full-Day Explorer</h3>
+                <p>The ultimate cycling adventure. Ride through city streets, parks, countryside, and riverside trails. Includes lunch break at a scenic spot.</p>
+                <div class="tour-detail-meta">
+                    <div class="tour-detail-meta-item"><i class="fas fa-clock"></i> 8 Hours</div>
+                    <div class="tour-detail-meta-item"><i class="fas fa-ruler-horizontal"></i> 35 km</div>
+                    <div class="tour-detail-meta-item"><i class="fas fa-signal"></i> Moderate</div>
+                </div>
+                <div class="card-price" style="margin-bottom:1.25rem;">₹999 <span>/ person</span></div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book This Tour</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GROUP PRICING TABLE -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-users"></i> Group Discounts</div>
+            <h2>Group Pricing</h2>
+            <p>Bigger groups, bigger savings. Perfect for team outings, events, and celebrations.</p>
+        </div>
+        <div style="max-width:800px;margin:0 auto;" class="animate-on-scroll">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Tour</th>
+                        <th>1 Person</th>
+                        <th>2–4 People</th>
+                        <th>5–10 People</th>
+                        <th>10+ People</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Heritage Tour</td><td>₹499</td><td>₹449</td><td>₹399</td><td>₹349</td></tr>
+                    <tr><td>Sunset Ride</td><td>₹399</td><td>₹359</td><td>₹319</td><td>₹279</td></tr>
+                    <tr><td>Food Trail</td><td>₹599</td><td>₹549</td><td>₹499</td><td>₹449</td></tr>
+                    <tr><td>Full-Day Explorer</td><td>₹999</td><td>₹899</td><td>₹799</td><td>₹699</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-gift"></i> Included</div>
+            <h2>What's Included</h2>
+            <p>Every tour comes loaded with everything you need for a safe and enjoyable ride.</p>
+        </div>
+        <div class="included-grid animate-on-scroll">
+            <div class="included-item"><i class="fas fa-user-tie"></i><h4>Expert Guide</h4></div>
+            <div class="included-item"><i class="fas fa-bicycle"></i><h4>Premium Bike</h4></div>
+            <div class="included-item"><i class="fas fa-hard-hat"></i><h4>Safety Helmet</h4></div>
+            <div class="included-item"><i class="fas fa-tint"></i><h4>Water Bottle</h4></div>
+            <div class="included-item"><i class="fas fa-cookie-bite"></i><h4>Snack Break</h4></div>
+            <div class="included-item"><i class="fas fa-camera"></i><h4>Photo Stops</h4></div>
+            <div class="included-item"><i class="fas fa-shield-alt"></i><h4>Insurance</h4></div>
+            <div class="included-item"><i class="fas fa-map"></i><h4>Route Map</h4></div>
+        </div>
+    </div>
+</section>
+
+<!-- TOUR SCHEDULE & DEPARTURES HUB -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-calendar-alt"></i> Live Schedule</div>
+            <h2>Tour Departure Calendar</h2>
+            <p>Select your date to view live departures, guide details, and available group slots.</p>
+        </div>
+
+        <div class="tour-schedule-layout animate-on-scroll">
+            <!-- Left Column: Interactive Calendar -->
+            <div class="tour-calendar-card">
+                <div class="calendar-header">
+                    <button class="calendar-nav" onclick="prevCalendarMonth()" aria-label="Previous Month"><i class="fas fa-chevron-left"></i></button>
+                    <h4 id="calendar-month-year">October 2026</h4>
+                    <button class="calendar-nav" onclick="nextCalendarMonth()" aria-label="Next Month"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="calendar-day-label">Sun</div>
+                    <div class="calendar-day-label">Mon</div>
+                    <div class="calendar-day-label">Tue</div>
+                    <div class="calendar-day-label">Wed</div>
+                    <div class="calendar-day-label">Thu</div>
+                    <div class="calendar-day-label">Fri</div>
+                    <div class="calendar-day-label">Sat</div>
+
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day available" onclick="selectTourDate(1)">1</div>
+                    <div class="calendar-day available" onclick="selectTourDate(2)">2</div>
+                    <div class="calendar-day available" onclick="selectTourDate(3)">3</div>
+                    <div class="calendar-day available" onclick="selectTourDate(4)">4</div>
+                    <div class="calendar-day available" onclick="selectTourDate(5)">5</div>
+                    <div class="calendar-day" onclick="selectTourDate(6)">6</div>
+                    <div class="calendar-day available" onclick="selectTourDate(7)">7</div>
+                    <div class="calendar-day available" onclick="selectTourDate(8)">8</div>
+                    <div class="calendar-day available" onclick="selectTourDate(9)">9</div>
+                    <div class="calendar-day available" onclick="selectTourDate(10)">10</div>
+                    <div class="calendar-day available" onclick="selectTourDate(11)">11</div>
+                    <div class="calendar-day" onclick="selectTourDate(12)">12</div>
+                    <div class="calendar-day" onclick="selectTourDate(13)">13</div>
+                    <div class="calendar-day available selected" onclick="selectTourDate(14)">14</div>
+                    <div class="calendar-day available" onclick="selectTourDate(15)">15</div>
+                    <div class="calendar-day available" onclick="selectTourDate(16)">16</div>
+                    <div class="calendar-day available" onclick="selectTourDate(17)">17</div>
+                    <div class="calendar-day available" onclick="selectTourDate(18)">18</div>
+                    <div class="calendar-day available" onclick="selectTourDate(19)">19</div>
+                    <div class="calendar-day" onclick="selectTourDate(20)">20</div>
+                    <div class="calendar-day available" onclick="selectTourDate(21)">21</div>
+                    <div class="calendar-day available" onclick="selectTourDate(22)">22</div>
+                    <div class="calendar-day available" onclick="selectTourDate(23)">23</div>
+                    <div class="calendar-day available" onclick="selectTourDate(24)">24</div>
+                    <div class="calendar-day available" onclick="selectTourDate(25)">25</div>
+                    <div class="calendar-day available" onclick="selectTourDate(26)">26</div>
+                    <div class="calendar-day" onclick="selectTourDate(27)">27</div>
+                    <div class="calendar-day available" onclick="selectTourDate(28)">28</div>
+                    <div class="calendar-day available" onclick="selectTourDate(29)">29</div>
+                    <div class="calendar-day available" onclick="selectTourDate(30)">30</div>
+                    <div class="calendar-day available" onclick="selectTourDate(31)">31</div>
+                </div>
+
+                <div class="calendar-legend">
+                    <span class="calendar-legend-item">
+                        <span style="width:8px;height:8px;border-radius:50%;background:var(--primary);display:inline-block;"></span> Available
+                    </span>
+                    <span class="calendar-legend-item">
+                        <span style="width:14px;height:14px;border-radius:var(--radius-sm);background:var(--primary);display:inline-block;"></span> Selected
+                    </span>
+                </div>
+            </div>
+
+            <!-- Right Column: Scheduled Departures List -->
+            <div class="tour-schedule-slots">
+                <div class="tour-slots-header">
+                    <div>
+                        <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">DAILY DEPARTURES FOR</div>
+                        <h3 id="selected-date-heading" style="font-size:1.125rem;margin:0.125rem 0 0;color:var(--text-heading);">
+                            Wednesday, October 14, 2026
+                        </h3>
+                    </div>
+                    <span class="badge badge-primary">
+                        <span class="avail-dot"></span> 3 Guided Tours Running
+                    </span>
+                </div>
+
+                <!-- Tour Slot 1 -->
+                <div class="tour-slot-card">
+                    <div class="tour-slot-time-badge">
+                        <strong>07:00 AM</strong>
+                        <span>2.5 Hours • Morning</span>
+                    </div>
+                    <div class="tour-slot-info">
+                        <h4>Heritage City Quarter Tour</h4>
+                        <div class="tour-slot-meta">
+                            <span><i class="fas fa-user-tie"></i> Guide: Alex J.</span>
+                            <span><i class="fas fa-users"></i> 8/12 Booked (4 Left)</span>
+                            <span><i class="fas fa-tachometer-alt"></i> Easy Pace</span>
+                        </div>
+                        <div class="tour-slot-route">
+                            <i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Old Town Square → Royal Fort → Waterfront Promenade
+                        </div>
+                    </div>
+                    <div class="tour-slot-action">
+                        <div class="tour-slot-price">₹499 <span>/ person</span></div>
+                        <a href="contact.html?tour=heritage" class="btn btn-primary btn-sm">
+                            <i class="fas fa-ticket-alt"></i> Reserve Slot
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Slot 2 -->
+                <div class="tour-slot-card">
+                    <div class="tour-slot-time-badge">
+                        <strong>04:30 PM</strong>
+                        <span>2.5 Hours • Sunset</span>
+                    </div>
+                    <div class="tour-slot-info">
+                        <h4>Sunset Oceanfront & Historic Coastal Ride</h4>
+                        <div class="tour-slot-meta">
+                            <span><i class="fas fa-user-tie"></i> Guide: Priya S.</span>
+                            <span><i class="fas fa-users"></i> 6/10 Booked (4 Left)</span>
+                            <span><i class="fas fa-bolt"></i> E-Bike Included</span>
+                        </div>
+                        <div class="tour-slot-route">
+                            <i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Marina Lighthouse → Cliffside Trail → Sunset Point
+                        </div>
+                    </div>
+                    <div class="tour-slot-action">
+                        <div class="tour-slot-price">₹699 <span>/ person</span></div>
+                        <a href="contact.html?tour=sunset" class="btn btn-primary btn-sm">
+                            <i class="fas fa-ticket-alt"></i> Reserve Slot
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Slot 3 -->
+                <div class="tour-slot-card">
+                    <div class="tour-slot-time-badge">
+                        <strong>07:30 PM</strong>
+                        <span>2.5 Hours • Night Food</span>
+                    </div>
+                    <div class="tour-slot-info">
+                        <h4>Night Street Food & Culture Cycling Trail</h4>
+                        <div class="tour-slot-meta">
+                            <span><i class="fas fa-user-tie"></i> Guide: Rahul V.</span>
+                            <span style="color:var(--orange);font-weight:600;"><i class="fas fa-fire"></i> 10/12 Booked (2 Left)</span>
+                            <span><i class="fas fa-utensils"></i> 4 Tastings</span>
+                        </div>
+                        <div class="tour-slot-route">
+                            <i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Spice Quarter → Heritage Bazaar → Night Food Hub
+                        </div>
+                    </div>
+                    <div class="tour-slot-action">
+                        <div class="tour-slot-price">₹799 <span>/ person</span></div>
+                        <a href="contact.html?tour=food" class="btn btn-primary btn-sm">
+                            <i class="fas fa-ticket-alt"></i> Reserve Slot
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOK TOUR CTA -->
+<section class="cta-split-section">
+    <div class="container">
+        <div class="cta-split-card animate-on-scroll">
+            <div class="cta-split-img-wrap">
+                <img src="assets/images/hero-group-ride.jpg" alt="Guided group cycling tour" loading="lazy">
+                <div class="cta-split-badge">
+                    <div style="width:36px;height:36px;border-radius:var(--radius-lg);background:var(--primary-subtle);display:flex;align-items:center;justify-content:center;color:var(--primary);">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <div>
+                        <div style="font-size:0.75rem;color:#94A3B8;font-weight:500;">Guided Experiences</div>
+                        <div style="font-size:0.9375rem;font-weight:600;color:#F8FAFC;">Certified Tour Leads</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-split-content">
+                <div class="section-label" style="margin-bottom:0.75rem;">
+                    <i class="fas fa-route"></i> Group & Custom Rides
+                </div>
+                <h2 style="font-size:clamp(1.75rem, 3vw, 2.25rem);margin-bottom:1rem;">Ready for an Unforgettable Adventure?</h2>
+                <p style="color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;font-weight:450;">
+                    Book your guided city tour today and explore hidden routes with certified local cyclists. Private corporate and custom tours also available.
+                </p>
+
+                <div class="cta-split-perks">
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>All safety equipment, helmet & guide radio included</span>
+                    </div>
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-coffee"></i>
+                        <span>Complimentary artisan refreshment stop on all 2hr+ tours</span>
+                    </div>
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-undo"></i>
+                        <span>Free cancellation up to 2 hours before start</span>
+                    </div>
+                </div>
+
+                <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-check"></i> Book a Tour
+                    </a>
+                    <a href="locations.html" class="btn btn-secondary btn-lg">
+                        Explore Hubs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

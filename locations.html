@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find PedalCity bicycle pickup and drop-off stations across the city. 15+ convenient locations with real-time bike availability and operating hours.">
+    <title>Pickup Locations | PedalCity Bicycle Rental & City Tours</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="main-nav"></div>
+
+<section class="page-header" aria-label="Locations Header">
+    <div class="page-header-bg"><img src="assets/images/banner-locations.jpg" alt="PedalCity pickup locations across the city"></div>
+    <div class="page-header-overlay"></div>
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Locations</span></div>
+        <h1>Pickup & Drop Locations</h1>
+        <p>15+ convenient stations across the city. Pick up and return at any location.</p>
+    </div>
+</section>
+
+<!-- MAP SECTION -->
+<section class="section">
+    <div class="container">
+        <div class="live-map-card animate-on-scroll">
+            <div class="live-map-frame-wrapper">
+                <iframe 
+                    title="PedalCity Network Stations Live Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.643729906666!2d80.2662057!3d13.0583167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526639b7d59837%3A0x6d9f0f9fb9c07ec7!2sAnna%20Salai%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="live-map-overlay-badge">
+                <div class="live-map-badge-header">
+                    <span class="avail-dot"></span>
+                    <strong>15+ Network Stations Live</strong>
+                </div>
+                <p><i class="fas fa-bicycle"></i> 140+ Bikes in Circulation</p>
+                <p><i class="fas fa-map-marker-alt"></i> All Hubs Open Today</p>
+                <div class="live-map-actions">
+                    <a href="contact.html#live-map" class="btn btn-primary btn-sm w-full">
+                        <i class="fas fa-location-arrow"></i> Station Directory
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LOCATION CARDS -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-map-pin"></i> Our Stations</div>
+            <h2>All Pickup Stations</h2>
+            <p>Each station is fully equipped with bikes, helmets, and friendly staff.</p>
+        </div>
+        <div class="grid grid-3 animate-on-scroll">
+            <div class="location-card">
+                <h4><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:0.5rem;"></i>Central Station</h4>
+                <p>42 Main Street, City Center</p>
+                <p>Mon–Sun: 6:00 AM – 10:00 PM</p>
+                <div class="location-badge"><span class="avail-dot" style="animation:none;"></span> 32 Bikes Available</div>
+            </div>
+            <div class="location-card">
+                <h4><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:0.5rem;"></i>Marina Beach</h4>
+                <p>15 Beach Road, Marina Promenade</p>
+                <p>Mon–Sun: 5:00 AM – 9:00 PM</p>
+                <div class="location-badge"><span class="avail-dot" style="animation:none;"></span> 28 Bikes Available</div>
+            </div>
+            <div class="location-card">
+                <h4><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:0.5rem;"></i>University Campus</h4>
+                <p>8 College Avenue, University District</p>
+                <p>Mon–Sat: 7:00 AM – 8:00 PM</p>
+                <div class="location-badge"><span class="avail-dot" style="animation:none;"></span> 24 Bikes Available</div>
+            </div>
+            <div class="location-card">
+                <h4><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:0.5rem;"></i>Heritage Quarter</h4>
+                <p>3 Temple Street, Old Town</p>
+                <p>Mon–Sun: 6:00 AM – 9:00 PM</p>
+                <div class="location-badge"><span class="avail-dot" style="animation:none;"></span> 18 Bikes Available</div>
+            </div>
+            <div class="location-card">
+                <h4><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:0.5rem;"></i>Tech Park Hub</h4>
+                <p>120 IT Corridor, Business District</p>
+                <p>Mon–Fri: 7:00 AM – 9:00 PM</p>
+                <div class="location-badge"><span class="avail-dot" style="animation:none;"></span> 20 Bikes Available</div>
+            </div>
+            <div class="location-card">
+                <h4><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:0.5rem;"></i>Central Park Gate</h4>
+                <p>1 Park Avenue, Green Zone</p>
+                <p>Mon–Sun: 5:30 AM – 8:30 PM</p>
+                <div class="location-badge"><span class="avail-dot" style="animation:none;"></span> 22 Bikes Available</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEAREST LOCATION CTA -->
+<section class="cta-split-section">
+    <div class="container">
+        <div class="cta-split-card animate-on-scroll">
+            <!-- Left: Station Image with Floating Live Hub Badge -->
+            <div class="cta-split-img-wrap">
+                <img src="assets/images/banner-fleet.jpg" alt="PedalCity bicycle station in the city center" loading="lazy">
+                <div class="cta-split-badge">
+                    <div style="width:36px;height:36px;border-radius:var(--radius-lg);background:var(--primary-subtle);display:flex;align-items:center;justify-content:center;color:var(--primary);">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <div>
+                        <div style="font-size:0.75rem;color:#94A3B8;font-weight:500;">City Station Network</div>
+                        <div style="font-size:0.9375rem;font-weight:600;color:#F8FAFC;"><span class="avail-dot"></span> 15+ Active Hubs</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Action Content -->
+            <div class="cta-split-content">
+                <div class="section-label" style="margin-bottom:0.75rem;">
+                    <i class="fas fa-map-marker-alt"></i> Find A Station
+                </div>
+                <h2 style="font-size:clamp(1.75rem, 3vw, 2.25rem);margin-bottom:1rem;">Find Your Nearest Station</h2>
+                <p style="color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;font-weight:450;">
+                    All stations are located near public transit hubs, parks, and major city attractions for easy access. Pick up from any station, return to any station.
+                </p>
+
+                <div class="cta-split-perks">
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-qrcode"></i>
+                        <span>Instant 10-second smartphone QR unlock</span>
+                    </div>
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Return at any docking station with ₹0 penalty</span>
+                    </div>
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Open 6:00 AM – 10:00 PM every day</span>
+                    </div>
+                </div>
+
+                <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-location-arrow"></i> Get Directions
+                    </a>
+                    <a href="fleet.html" class="btn btn-secondary btn-lg">
+                        Browse Fleet
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

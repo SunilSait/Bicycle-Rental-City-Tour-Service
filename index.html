@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PedalCity — Explore your city on two wheels. Rent premium bicycles and join guided city tours for an unforgettable urban cycling experience.">
+    <title>PedalCity | Bicycle Rental & City Tour Service</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<div id="main-nav"></div>
+
+<!-- Ambient Background Shapes -->
+<div class="hero-bg-shape hero-bg-shape-1"></div>
+<div class="hero-bg-shape hero-bg-shape-2"></div>
+
+<!-- ========== HERO — ASYMMETRIC SPLIT (AUTO 5S SLIDER) ========== -->
+<section class="hero-split hero-slider-container" id="hero-slider" aria-label="Hero Slider">
+    <!-- SLIDE 1: Urban Cycling Experience -->
+    <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-inner">
+            <div class="hero-split-text animate-on-scroll">
+                <div class="section-label">
+                    <i class="fas fa-bicycle"></i> Urban Cycling Experience
+                </div>
+                <h1 style="margin-bottom:1.25rem;line-height:1.15;">
+                    Explore the City<br>
+                    <span class="hero-title-gradient">On Two Wheels</span>
+                </h1>
+                <p style="font-size:1.0625rem;margin-bottom:2rem;max-width:500px;font-weight:450;">
+                    Discover urban landscapes with our premium bicycle fleet. From quick commutes to guided city tours — ride your way, every day.
+                </p>
+                <div class="trust-badges" style="margin-bottom:2.25rem;">
+                    <div class="trust-badge">
+                        <i class="fas fa-leaf"></i> Eco-Friendly
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-bicycle"></i> 200+ Bikes
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-star"></i> 4.9★ Rating
+                    </div>
+                </div>
+                <div class="hero-cta-btns" style="display:flex;gap:1rem;flex-wrap:wrap;">
+                    <a href="fleet.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-bicycle"></i> Book a Ride
+                    </a>
+                    <a href="fleet.html" class="btn btn-secondary btn-lg">
+                        View Fleet
+                    </a>
+                </div>
+            </div>
+            <div class="hero-split-visual animate-on-scroll">
+                <div class="hero-image-stack">
+                    <div class="hero-image-main">
+                        <img src="assets/images/hero-cycling-city.jpg" alt="Cyclist exploring the city streets on a rental bicycle" loading="eager">
+                    </div>
+                    <!-- Floating stat card: top -->
+                    <div class="hero-float-card card-top">
+                        <div class="hero-float-icon"><i class="fas fa-route"></i></div>
+                        <div>
+                            <div class="hero-float-label">Tours Completed</div>
+                            <div class="hero-float-value">2,400+</div>
+                        </div>
+                    </div>
+                    <!-- Floating stat card: bottom -->
+                    <div class="hero-float-card card-bottom">
+                        <div class="hero-float-icon"><i class="fas fa-users"></i></div>
+                        <div>
+                            <div class="hero-float-label">Happy Riders</div>
+                            <div class="hero-float-value">5,000+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: Scenic Sunset & Coast Rides -->
+    <div class="hero-slide" data-slide="1">
+        <div class="hero-slide-inner">
+            <div class="hero-split-text">
+                <div class="section-label">
+                    <i class="fas fa-sun"></i> Scenic Sunset & Group Tours
+                </div>
+                <h1 style="margin-bottom:1.25rem;line-height:1.15;">
+                    Discover Secret Routes<br>
+                    <span class="hero-title-gradient">& Sunset Horizons</span>
+                </h1>
+                <p style="font-size:1.0625rem;margin-bottom:2rem;max-width:500px;font-weight:450;">
+                    Join curated group rides through historic city quarters and oceanfront sunsets. Led by certified local experts with full safety gear.
+                </p>
+                <div class="trust-badges" style="margin-bottom:2.25rem;">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i> Safe & Insured
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-map-marked-alt"></i> 15+ Stations
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-award"></i> Certified Guides
+                    </div>
+                </div>
+                <div class="hero-cta-btns" style="display:flex;gap:1rem;flex-wrap:wrap;">
+                    <a href="tours.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-compass"></i> Explore Tours
+                    </a>
+                    <a href="locations.html" class="btn btn-secondary btn-lg">
+                        View Locations
+                    </a>
+                </div>
+            </div>
+            <div class="hero-split-visual">
+                <div class="hero-image-stack">
+                    <div class="hero-image-main">
+                        <img src="assets/images/hero-sunset-ride.jpg" alt="Sunset coastal cycling ride with friends" loading="lazy">
+                    </div>
+                    <!-- Floating stat card: top -->
+                    <div class="hero-float-card card-top">
+                        <div class="hero-float-icon"><i class="fas fa-map-pin"></i></div>
+                        <div>
+                            <div class="hero-float-label">Pickup Hubs</div>
+                            <div class="hero-float-value">15+ Stations</div>
+                        </div>
+                    </div>
+                    <!-- Floating stat card: bottom -->
+                    <div class="hero-float-card card-bottom">
+                        <div class="hero-float-icon"><i class="fas fa-bicycle"></i></div>
+                        <div>
+                            <div class="hero-float-label">Active Bikes</div>
+                            <div class="hero-float-value">140+ Ready</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: Smart E-Bikes & Group Trail Explorer -->
+    <div class="hero-slide" data-slide="2">
+        <div class="hero-slide-inner">
+            <div class="hero-split-text">
+                <div class="section-label">
+                    <i class="fas fa-bolt"></i> Smart E-Bikes & Group Rides
+                </div>
+                <h1 style="margin-bottom:1.25rem;line-height:1.15;">
+                    Power Your Adventures<br>
+                    <span class="hero-title-gradient">With Electric Precision</span>
+                </h1>
+                <p style="font-size:1.0625rem;margin-bottom:2rem;max-width:500px;font-weight:450;">
+                    Conquer longer distances and city hills effortlessly. Our pedal-assist e-bikes deliver maximum comfort, smooth acceleration, and zero carbon emissions.
+                </p>
+                <div class="trust-badges" style="margin-bottom:2.25rem;">
+                    <div class="trust-badge">
+                        <i class="fas fa-battery-full"></i> 80km Range
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-tachometer-alt"></i> 25 km/h Assist
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-users"></i> Group Rides
+                    </div>
+                </div>
+                <div class="hero-cta-btns" style="display:flex;gap:1rem;flex-wrap:wrap;">
+                    <a href="fleet.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-bolt"></i> Rent an E-Bike
+                    </a>
+                    <a href="tours.html" class="btn btn-secondary btn-lg">
+                        View Group Tours
+                    </a>
+                </div>
+            </div>
+            <div class="hero-split-visual">
+                <div class="hero-image-stack">
+                    <div class="hero-image-main">
+                        <img src="assets/images/hero-group-ride.jpg" alt="Group of friends cycling together on city e-bikes" loading="lazy">
+                    </div>
+                    <!-- Floating stat card: top -->
+                    <div class="hero-float-card card-top">
+                        <div class="hero-float-icon"><i class="fas fa-charging-station"></i></div>
+                        <div>
+                            <div class="hero-float-label">Fast Charge Points</div>
+                            <div class="hero-float-value">60+ Hubs</div>
+                        </div>
+                    </div>
+                    <!-- Floating stat card: bottom -->
+                    <div class="hero-float-card card-bottom">
+                        <div class="hero-float-icon"><i class="fas fa-mountain"></i></div>
+                        <div>
+                            <div class="hero-float-label">Scenic Trails</div>
+                            <div class="hero-float-value">25+ Routes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider Pagination Dots & Arrows -->
+    <div class="hero-slider-controls">
+        <button class="hero-slider-arrow hero-prev-btn" onclick="prevHeroSlide()" aria-label="Previous Slide" title="Previous Slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="hero-slider-dots">
+            <button class="hero-dot active" onclick="goToHeroSlide(0)" aria-label="Slide 1" title="Slide 1"></button>
+            <button class="hero-dot" onclick="goToHeroSlide(1)" aria-label="Slide 2" title="Slide 2"></button>
+            <button class="hero-dot" onclick="goToHeroSlide(2)" aria-label="Slide 3" title="Slide 3"></button>
+        </div>
+        <button class="hero-slider-arrow hero-next-btn" onclick="nextHeroSlide()" aria-label="Next Slide" title="Next Slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</section>
+
+<!-- ========== HOW IT WORKS — TIMELINE ========== -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-cog"></i> Simple Process</div>
+            <h2>How It Works</h2>
+            <p>Renting a bike with PedalCity is quick, easy, and hassle-free. Four simple steps to get you riding.</p>
+        </div>
+        <div class="timeline-steps animate-on-scroll">
+            <div class="timeline-step">
+                <div class="timeline-step-num">1</div>
+                <div class="timeline-line"></div>
+                <h4>Choose Your Bike</h4>
+                <p>Browse our fleet and pick the perfect ride for your adventure.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-step-num">2</div>
+                <div class="timeline-line"></div>
+                <h4>Select Location</h4>
+                <p>Pick your nearest station from 15+ pickup points across the city.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-step-num">3</div>
+                <div class="timeline-line"></div>
+                <h4>Ride the City</h4>
+                <p>Explore the streets, parks, and hidden gems at your own pace.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-step-num">4</div>
+                <h4>Return & Go</h4>
+                <p>Drop off at any station. Quick, flexible, and eco-friendly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FEATURED BIKES ========== -->
+<section class="section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-bicycle"></i> Our Fleet</div>
+            <h2>Featured Bicycles</h2>
+            <p>Ride the best. From classic city cruisers to powerful e-bikes, we have the right bicycle for every rider.</p>
+        </div>
+        <div class="grid grid-3 animate-on-scroll">
+            <!-- Bike 1: City Cruiser -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/images/featured-city-cruiser.jpg" alt="City Cruiser bicycle — comfortable urban commuter" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">City Bike</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--green);font-weight:600;"><span class="avail-dot"></span> Available</span>
+                    </div>
+                    <h3 class="card-title">City Cruiser</h3>
+                    <p class="card-text">Perfect for daily commutes and casual city rides. Step-through frame with front basket.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-cog"></i> 7 Speed</span>
+                        <span class="bike-spec"><i class="fas fa-weight-hanging"></i> 14 kg</span>
+                        <span class="bike-spec"><i class="fas fa-ruler-horizontal"></i> Alloy</span>
+                    </div>
+                    <div class="card-price">₹299 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="fleet.html" class="btn btn-primary btn-sm">Book Now</a>
+                    <a href="fleet.html" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+            <!-- Bike 2: Mountain Explorer -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/images/featured-mountain-bike.jpg" alt="Mountain Explorer bicycle — rugged off-road adventure bike" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">Mountain</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--green);font-weight:600;"><span class="avail-dot"></span> Available</span>
+                    </div>
+                    <h3 class="card-title">Mountain Explorer</h3>
+                    <p class="card-text">Built for rugged trails and off-road adventures. Full suspension with knobby tires.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-cog"></i> 21 Speed</span>
+                        <span class="bike-spec"><i class="fas fa-weight-hanging"></i> 16 kg</span>
+                        <span class="bike-spec"><i class="fas fa-ruler-horizontal"></i> Carbon</span>
+                    </div>
+                    <div class="card-price">₹499 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="fleet.html" class="btn btn-primary btn-sm">Book Now</a>
+                    <a href="fleet.html" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+            <!-- Bike 3: E-Bike Pro -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/images/featured-ebike-pro.jpg" alt="E-Bike Pro — electric-assisted premium bicycle" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">E-Bike</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--green);font-weight:600;"><span class="avail-dot"></span> Available</span>
+                    </div>
+                    <h3 class="card-title">E-Bike Pro</h3>
+                    <p class="card-text">Effortless riding with electric pedal assist. 60km range on a single charge.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-bolt"></i> Electric</span>
+                        <span class="bike-spec"><i class="fas fa-battery-full"></i> 60 km</span>
+                        <span class="bike-spec"><i class="fas fa-ruler-horizontal"></i> Alloy</span>
+                    </div>
+                    <div class="card-price">₹699 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="fleet.html" class="btn btn-primary btn-sm">Book Now</a>
+                    <a href="fleet.html" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem;" class="animate-on-scroll">
+            <a href="fleet.html" class="btn btn-outline btn-lg"><i class="fas fa-arrow-right"></i> View All Bicycles</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CITY HIGHLIGHTS — BENTO GRID ========== -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-map-marker-alt"></i> Popular Routes</div>
+            <h2>City Highlights</h2>
+            <p>Discover the most scenic routes and iconic landmarks on two wheels.</p>
+        </div>
+        <div class="bento-grid animate-on-scroll">
+            <div class="bento-item">
+                <img src="assets/images/bento-1.jpg" alt="Heritage district cycling route through historic architecture" loading="lazy">
+                <div class="bento-overlay">
+                    <div>
+                        <h4>Heritage District</h4>
+                        <p>Explore centuries-old architecture</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-item">
+                <img src="assets/images/bento-2.jpg" alt="Scenic park cycling trail through autumn foliage" loading="lazy">
+                <div class="bento-overlay">
+                    <div>
+                        <h4>Central Park Loop</h4>
+                        <p>5 km scenic nature trail</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-item">
+                <img src="assets/images/bento-3.jpg" alt="Waterfront cycling path along the river" loading="lazy">
+                <div class="bento-overlay">
+                    <div>
+                        <h4>Riverfront Path</h4>
+                        <p>Sunset views along the water</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-item">
+                <img src="assets/images/cta-ride.jpg" alt="Aerial view of cycling paths through urban parks" loading="lazy">
+                <div class="bento-overlay">
+                    <div>
+                        <h4>Urban Greenway</h4>
+                        <p>Connected cycling trails across the city</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== STATS BAR ========== -->
+<section class="stats-bar">
+    <div class="container">
+        <div class="stats-grid animate-on-scroll">
+            <div class="stat-item">
+                <h3 data-count="5000" data-suffix="+">0</h3>
+                <p>Happy Riders</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-count="15" data-suffix="">0</h3>
+                <p>Pickup Stations</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-count="200" data-suffix="+">0</h3>
+                <p>Bicycles Available</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-count="50" data-suffix="+">0</h3>
+                <p>Guided Tours</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-quote-left"></i> Rider Stories</div>
+            <h2>What Our Riders Say</h2>
+            <p>Real experiences from real cyclists who explored the city with PedalCity.</p>
+        </div>
+        <div class="testimonial-grid animate-on-scroll">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The heritage tour was absolutely magical. Our guide knew every hidden alley and secret courtyard. The bikes were comfortable and well-maintained. Will definitely book again!"</p>
+                <div class="testimonial-author">
+                    <img src="assets/images/testimonial-1.jpg" alt="Priya Sharma — satisfied PedalCity customer" class="testimonial-avatar" loading="lazy">
+                    <div>
+                        <div class="testimonial-name">Priya Sharma</div>
+                        <div class="testimonial-role">Heritage Tour Rider</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Rented an e-bike for a weekend getaway with friends. The booking process was seamless and the bike quality exceeded our expectations. The pickup was super convenient."</p>
+                <div class="testimonial-author">
+                    <img src="assets/images/testimonial-2.jpg" alt="Arjun Mehta — happy PedalCity e-bike renter" class="testimonial-avatar" loading="lazy">
+                    <div>
+                        <div class="testimonial-name">Arjun Mehta</div>
+                        <div class="testimonial-role">E-Bike Weekend Rider</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"I use PedalCity daily for my office commute. It's affordable, eco-friendly, and keeps me fit. The city cruiser is perfect for navigating busy streets. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <img src="assets/images/testimonial-3.jpg" alt="Sneha Patel — regular PedalCity commuter" class="testimonial-avatar" loading="lazy">
+                    <div>
+                        <div class="testimonial-name">Sneha Patel</div>
+                        <div class="testimonial-role">Daily Commuter</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MODERN CTA CARD SECTION ========== -->
+<section class="cta-modern-section">
+    <div class="container">
+        <div class="cta-modern-card animate-on-scroll">
+            <div class="cta-modern-glow"></div>
+            <div class="cta-modern-grid">
+                <!-- Left: Content & Action Buttons -->
+                <div class="cta-modern-text">
+                    <div class="section-label" style="background:var(--primary-subtle);color:var(--primary-text);margin-bottom:1rem;">
+                        <i class="fas fa-bicycle"></i> Start Your Journey Today
+                    </div>
+                    <h2>Ready to Explore the City on Two Wheels?</h2>
+                    <p>Join over 5,000+ satisfied riders across 15+ pickup hubs. Reserve your bicycle in under 60 seconds with instant QR unlock, free safety helmet, and 24/7 roadside assistance included.</p>
+                    
+                    <div class="cta-perks">
+                        <div class="cta-perk-item">
+                            <i class="fas fa-bolt"></i> Instant Station Unlock
+                        </div>
+                        <div class="cta-perk-item">
+                            <i class="fas fa-shield-alt"></i> Full Insurance Included
+                        </div>
+                        <div class="cta-perk-item">
+                            <i class="fas fa-undo"></i> Free Cancellation
+                        </div>
+                    </div>
+
+                    <div class="cta-actions">
+                        <a href="fleet.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-bicycle"></i> Book Your Bike Now
+                        </a>
+                        <a href="tours.html" class="btn btn-outline btn-lg" style="color:#FFFFFF;border-color:rgba(255,255,255,0.25);">
+                            <i class="fas fa-compass"></i> Explore Guided Tours
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Live Rental Snapshot Widget -->
+                <div class="cta-preview-widget">
+                    <div class="cta-widget-header">
+                        <span class="cta-widget-title"><i class="fas fa-bicycle" style="color:var(--primary);margin-right:0.5rem;"></i>Quick Ride Pass</span>
+                        <span class="cta-widget-badge"><span class="avail-dot"></span> Live Hubs</span>
+                    </div>
+
+                    <div class="cta-widget-item">
+                        <span><i class="fas fa-map-marker-alt"></i>Pickup Station</span>
+                        <strong>15+ City Hubs</strong>
+                    </div>
+                    <div class="cta-widget-item">
+                        <span><i class="fas fa-clock"></i>Operating Hours</span>
+                        <strong>6:00 AM – 10:00 PM</strong>
+                    </div>
+                    <div class="cta-widget-item">
+                        <span><i class="fas fa-hard-hat"></i>Helmet & Lock</span>
+                        <strong style="color:var(--primary);">Included Free</strong>
+                    </div>
+                    <div class="cta-widget-item">
+                        <span><i class="fas fa-shield-check"></i>Security Deposit</span>
+                        <strong>₹0 (Zero Deposit)</strong>
+                    </div>
+
+                    <div class="cta-widget-footer">
+                        <div class="cta-widget-price">
+                            <span class="cta-widget-price-label">Hourly Pass From</span>
+                            <span class="cta-widget-price-val">₹99 <small style="font-size:0.75rem;color:#94A3B8;">/ hour</small></span>
+                        </div>
+                        <a href="fleet.html" class="btn btn-primary btn-sm">
+                            Rent Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div id="main-footer"></div>
+
+<script src="components.js"></script>
+</body>
+</html>

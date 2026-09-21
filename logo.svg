@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <!-- Outer wheel rim -->
+  <circle cx="80" cy="80" r="68" stroke="#84CC16" stroke-width="5" fill="none"/>
+  <!-- Inner wheel rim -->
+  <circle cx="80" cy="80" r="58" stroke="#84CC16" stroke-width="2" fill="none" opacity="0.3"/>
+  <!-- Hub -->
+  <circle cx="80" cy="80" r="12" fill="#84CC16"/>
+  <circle cx="80" cy="80" r="6" fill="white"/>
+  <!-- Spokes -->
+  <line x1="80" y1="22" x2="80" y2="68" stroke="#84CC16" stroke-width="1.5"/>
+  <line x1="80" y1="92" x2="80" y2="138" stroke="#84CC16" stroke-width="1.5"/>
+  <line x1="22" y1="80" x2="68" y2="80" stroke="#84CC16" stroke-width="1.5"/>
+  <line x1="92" y1="80" x2="138" y2="80" stroke="#84CC16" stroke-width="1.5"/>
+  <line x1="39" y1="39" x2="68" y2="68" stroke="#84CC16" stroke-width="1.5"/>
+  <line x1="92" y1="92" x2="121" y2="121" stroke="#84CC16" stroke-width="1.5"/>
+  <line x1="121" y1="39" x2="92" y2="68" stroke="#84CC16" stroke-width="1.5"/>
+  <line x1="68" y1="92" x2="39" y2="121" stroke="#84CC16" stroke-width="1.5"/>
+  <!-- City skyline silhouette inside top of wheel -->
+  <g transform="translate(44, 28)">
+    <rect x="0" y="18" width="8" height="14" fill="#0F172A" rx="1"/>
+    <rect x="10" y="10" width="10" height="22" fill="#0F172A" rx="1"/>
+    <rect x="22" y="4" width="8" height="28" fill="#84CC16" rx="1"/>
+    <rect x="32" y="14" width="10" height="18" fill="#0F172A" rx="1"/>
+    <rect x="44" y="8" width="8" height="24" fill="#0F172A" rx="1"/>
+    <rect x="54" y="16" width="10" height="16" fill="#0F172A" rx="1"/>
+    <!-- Antenna on tallest building -->
+    <line x1="26" y1="0" x2="26" y2="4" stroke="#84CC16" stroke-width="1.5"/>
+    <circle cx="26" cy="0" r="1.5" fill="#84CC16"/>
+  </g>
+</svg>

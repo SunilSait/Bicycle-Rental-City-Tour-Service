@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found — PedalCity. The page you're looking for doesn't exist or has been moved.">
+    <title>404 — Page Not Found | PedalCity</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .wheel-spin {
+            animation: float 3s ease-in-out infinite;
+            display: block;
+            margin: 0 auto 0.5rem;
+        }
+        .gear-bg {
+            position: absolute;
+            top: 28%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 360px;
+            height: 360px;
+            opacity: 0.08;
+            animation: spin-slow 35s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="fullscreen-page">
+
+<div class="fullscreen-topbar">
+    <a href="index.html" class="nav-logo" aria-label="PedalCity Home">
+        <img src="logo.svg" alt="PedalCity Logo" width="38" height="38" style="width:38px;height:38px;object-fit:contain;display:block;">
+        <div class="nav-logo-text">
+            <span class="brand-top">PedalCity</span>
+            <span class="brand-bottom">Bicycle Rental & City Tours</span>
+        </div>
+    </a>
+    <div style="display:flex;gap:0.5rem;">
+        <button onclick="toggleDir()" class="auth-toggle-btn" title="Toggle Direction">
+            <span class="dir-label" style="font-size:0.625rem;font-weight:600;">LTR</span>
+        </button>
+        <button onclick="toggleTheme()" class="auth-toggle-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+            <i class="fas fa-moon theme-icon"></i>
+        </button>
+    </div>
+</div>
+
+<div class="fullscreen-content">
+    <div style="position:relative;max-width:560px;width:100%;margin:0 auto;z-index:1;">
+        <!-- Background bicycle wheel decoration -->
+        <svg class="gear-bg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" stroke="var(--primary)" stroke-width="3" stroke-dasharray="8 4"/>
+            <circle cx="100" cy="100" r="82" stroke="var(--primary)" stroke-width="2"/>
+            <circle cx="100" cy="100" r="72" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="100" y1="28" x2="100" y2="172" stroke="var(--primary)" stroke-width="2"/>
+            <line x1="28" y1="100" x2="172" y2="100" stroke="var(--primary)" stroke-width="2"/>
+            <line x1="49" y1="49" x2="151" y2="151" stroke="var(--primary)" stroke-width="1.5"/>
+            <line x1="151" y1="49" x2="49" y2="151" stroke="var(--primary)" stroke-width="1.5"/>
+            <circle cx="100" cy="100" r="28" stroke="var(--primary)" stroke-width="2" fill="none"/>
+            <circle cx="100" cy="100" r="14" stroke="var(--primary)" stroke-width="2"/>
+            <circle cx="100" cy="100" r="5" fill="var(--primary)"/>
+        </svg>
+
+        <div style="position:relative;display:inline-block;width:100%;text-align:center;margin-bottom:1.5rem;z-index:2;">
+            <div class="error-code">404</div>
+        </div>
+
+        <i class="fas fa-bicycle wheel-spin" style="font-size:3.5rem;color:var(--primary);margin-bottom:1.5rem;position:relative;z-index:2;display:inline-block;"></i>
+
+        <div class="error-subtitle" style="position:relative;z-index:2;">Page Not Found</div>
+        <p class="error-desc" style="position:relative;z-index:2;">The trail you're following doesn't exist. This page has been moved, deleted, or never existed. Let's get you back on the road.</p>
+
+        <div style="display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;">
+            <a href="index.html" class="btn btn-primary btn-lg"><i class="fas fa-home"></i> Back to Home</a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">Contact Support</a>
+        </div>
+
+        <div style="margin-top:3rem;padding:1.5rem;background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-2xl);position:relative;z-index:2;">
+            <p style="font-family:var(--font-heading);font-weight:500;font-size:0.875rem;color:var(--text-heading);margin-bottom:1rem;">You might be looking for:</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;">
+                <a href="fleet.html" class="badge badge-outline" style="padding:0.5rem 1rem;font-size:0.8125rem;border-radius:var(--radius-full);cursor:pointer;">Our Fleet</a>
+                <a href="tours.html" class="badge badge-outline" style="padding:0.5rem 1rem;font-size:0.8125rem;border-radius:var(--radius-full);cursor:pointer;">Guided Tours</a>
+                <a href="locations.html" class="badge badge-outline" style="padding:0.5rem 1rem;font-size:0.8125rem;border-radius:var(--radius-full);cursor:pointer;">Locations</a>
+                <a href="rules.html" class="badge badge-outline" style="padding:0.5rem 1rem;font-size:0.8125rem;border-radius:var(--radius-full);cursor:pointer;">Rules & Deposit</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="components.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { initAuthPage(); });</script>
+</body>
+</html>

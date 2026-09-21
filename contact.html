@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact PedalCity — Reach out for bicycle rental inquiries, tour bookings, partnerships, or support. Visit our office or drop us a message.">
+    <title>Contact Us | PedalCity Bicycle Rental & City Tours</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="main-nav"></div>
+
+<section class="page-header" aria-label="Contact Header">
+    <div class="page-header-bg"><img src="assets/images/banner-contact.jpg" alt="PedalCity customer support center"></div>
+    <div class="page-header-overlay"></div>
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Contact</span></div>
+        <h1>Get in Touch</h1>
+        <p>Have questions about our bikes or tours? We're here to help. Reach out anytime.</p>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+    <div class="container">
+        <div class="contact-split-grid animate-on-scroll">
+            <!-- LEFT: Info -->
+            <div>
+                <h3 style="margin-bottom:1.75rem;">Our Office</h3>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div><h5>Office Address</h5><p><bdi>No. 18, Cycling Hub Building,</bdi><br><bdi>Anna Salai, Chennai – 600002,</bdi><br><bdi>Tamil Nadu, India</bdi></p></div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                    <div><h5>Phone Numbers</h5><p><bdi>+91 98765 43210</bdi> (Bookings)<br><bdi>+91 87654 32109</bdi> (Support)</p></div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                    <div><h5>Email</h5><p><bdi>hello@pedalcity.in</bdi><br><bdi>support@pedalcity.in</bdi></p></div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+                    <div><h5>Operating Hours</h5><p>Monday – Friday: 6:00 AM – 9:00 PM<br>Saturday: 6:00 AM – 8:00 PM<br>Sunday: 7:00 AM – 6:00 PM</p></div>
+                </div>
+                <!-- Map Image -->
+                <div class="map-wrapper" style="margin-top:2rem;height:240px;">
+                    <img src="assets/images/location-map.jpg" alt="PedalCity office location map" loading="lazy">
+                </div>
+            </div>
+            <!-- RIGHT: Form -->
+            <div>
+                <h3 style="margin-bottom:1.75rem;">Send Us a Message</h3>
+                <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent. We\'ll respond within 2 hours.'); this.reset();">
+                    <div class="form-group">
+                        <label class="form-label" for="ct-name">Full Name</label>
+                        <input type="text" id="ct-name" class="form-input" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ct-email">Email Address</label>
+                        <input type="email" id="ct-email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ct-phone">Phone Number</label>
+                        <input type="tel" id="ct-phone" class="form-input" placeholder="+91 00000 00000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ct-subject">Subject</label>
+                        <select id="ct-subject" class="form-select" required>
+                            <option value="" disabled selected>Select a topic</option>
+                            <option>Bike Rental Inquiry</option>
+                            <option>Tour Booking</option>
+                            <option>Corporate / Group Booking</option>
+                            <option>Partnership Opportunity</option>
+                            <option>Feedback / Complaint</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ct-message">Message</label>
+                        <textarea id="ct-message" class="form-textarea" placeholder="Tell us how we can help..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full btn-lg">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== LIVE INTERACTIVE MAP SECTION ========== -->
+<section class="section section-alt live-map-section" id="live-map">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-map-marked-alt"></i> Live Map</div>
+            <h2>Find Us on the Map</h2>
+            <p>Locate our central hub, plan your cycling route, or get turn-by-turn directions to our headquarters.</p>
+        </div>
+        <div class="live-map-card animate-on-scroll">
+            <div class="live-map-frame-wrapper">
+                <iframe 
+                    title="PedalCity Central Hub Live Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.643729906666!2d80.2662057!3d13.0583167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526639b7d59837%3A0x6d9f0f9fb9c07ec7!2sAnna%20Salai%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="live-map-overlay-badge">
+                <div class="live-map-badge-header">
+                    <span class="avail-dot"></span>
+                    <strong>PedalCity Central Hub & HQ</strong>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> No. 18, Anna Salai, Chennai – 600002</p>
+                <p><i class="fas fa-bicycle"></i> 32 Bikes Available Right Now</p>
+                <p><i class="fas fa-clock"></i> Open Today: 6:00 AM – 9:00 PM</p>
+                <div class="live-map-actions">
+                    <a href="https://maps.google.com/?q=Anna+Salai+Chennai" target="_blank" rel="noopener" class="btn btn-primary btn-sm w-full">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Links -->
+<section class="section-sm">
+    <div class="container" style="text-align:center;">
+        <h3 style="margin-bottom:1.5rem;">Follow Us</h3>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="#" class="btn btn-outline btn-sm"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="btn btn-outline btn-sm"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="btn btn-outline btn-sm"><i class="fab fa-x-twitter"></i> Twitter</a>
+            <a href="#" class="btn btn-outline btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

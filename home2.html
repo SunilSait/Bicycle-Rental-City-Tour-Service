@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PedalCity Premium — Experience the ultimate urban cycling adventure with guided tours, premium bikes, and exclusive city exploration packages.">
+    <title>Home 2 — Premium | PedalCity Bicycle Rental & City Tours</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="main-nav"></div>
+
+    <!-- ========== HERO — FULLSCREEN SLIDER ========== -->
+    <section class="hero-full">
+        <div class="hero-slider" id="hero-slider">
+            <div class="hero-slide active">
+                <img src="assets/images/hero-group-ride.jpg" alt="Group of cyclists on a guided city tour"
+                    loading="eager">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/images/hero-sunset-ride.jpg"
+                    alt="Cyclist silhouette riding along coastal path at sunset" loading="lazy">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/images/hero-park-cycling.jpg"
+                    alt="Cyclist riding through lush urban park with city skyline" loading="lazy">
+            </div>
+        </div>
+        <div class="hero-full-overlay"></div>
+        <div class="hero-full-content animate-on-scroll">
+            <div
+                style="display:inline-flex;align-items:center;gap:0.625rem;background:rgba(13,148,136,0.25);border:1px solid rgba(13,148,136,0.4);backdrop-filter:blur(12px);border-radius:var(--radius-full);padding:0.5rem 1.25rem;margin-bottom:1.25rem;">
+                <span
+                    style="width:0.5rem;height:0.5rem;border-radius:50%;background:#10B981;display:inline-block;animation:pulse-glow 2s ease-in-out infinite;"></span>
+                <span
+                    style="color:rgba(255,255,255,0.9);font-family:var(--font-heading);font-weight:600;font-size:0.8125rem;letter-spacing:0.06em;">PREMIUM
+                    CITY CYCLING EXPERIENCE</span>
+            </div>
+            <h1
+                style="color:#fff;font-size:clamp(2.25rem,5.5vw,4rem);margin-bottom:1.25rem;text-shadow:0 4px 24px rgba(0,0,0,0.5);">
+                Ride. <span
+                    style="background:linear-gradient(135deg,#2DD4BF,#5EEAD4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Discover.</span><br>Experience.
+            </h1>
+            <p
+                style="color:rgba(255,255,255,0.78);font-size:1.125rem;max-width:600px;margin:0 auto 2rem;line-height:1.75;font-weight:450;">
+                Premium bicycle rentals and expert-led city tours. Explore iconic landmarks, hidden gems, and scenic
+                routes with PedalCity.
+            </p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;">
+                <a href="tours.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-route"></i> Explore Tours
+                </a>
+                <a href="fleet.html" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-bicycle"></i> View Fleet
+                </a>
+            </div>
+            <div style="display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;">
+                <div style="text-align:center;">
+                    <div style="font-family:var(--font-heading);font-weight:600;font-size:1.875rem;color:#fff;"
+                        data-count="5000" data-suffix="+">5000+</div>
+                    <div style="font-size:0.8125rem;color:rgba(255,255,255,0.55);font-weight:500;">Happy Riders</div>
+                </div>
+                <div style="width:1px;background:rgba(255,255,255,0.15);align-self:stretch;"></div>
+                <div style="text-align:center;">
+                    <div style="font-family:var(--font-heading);font-weight:600;font-size:1.875rem;color:#fff;">15</div>
+                    <div style="font-size:0.8125rem;color:rgba(255,255,255,0.55);font-weight:500;">Pickup Stations</div>
+                </div>
+                <div style="width:1px;background:rgba(255,255,255,0.15);align-self:stretch;"></div>
+                <div style="text-align:center;">
+                    <div style="font-family:var(--font-heading);font-weight:600;font-size:1.875rem;color:#fff;">4.9<span
+                            style="font-size:1rem;color:rgba(255,255,255,0.55);">/5</span></div>
+                    <div style="font-size:0.8125rem;color:rgba(255,255,255,0.55);font-weight:500;">Rider Rating</div>
+                </div>
+            </div>
+            <div style="margin-top:2rem;display:flex;justify-content:center;">
+                <div class="hero-slider-dots" id="hero-dots">
+                    <button class="hero-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+                    <button class="hero-dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+                    <button class="hero-dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+        <button class="hero-nav-btn prev" onclick="prevSlide()" aria-label="Previous slide"><i
+                class="fas fa-chevron-left"></i></button>
+        <button class="hero-nav-btn next" onclick="nextSlide()" aria-label="Next slide"><i
+                class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- ========== ABOUT US — SPLIT ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="about-split animate-on-scroll">
+                <div class="about-image-wrapper">
+                    <div class="about-image">
+                        <img src="assets/images/about-cycling.jpg" alt="Couple cycling together along scenic waterfront"
+                            loading="lazy">
+                    </div>
+                    <div class="about-stat-card">
+                        <div class="about-stat-num">8+</div>
+                        <div class="about-stat-label">Years of Experience</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="section-label"><i class="fas fa-info-circle"></i> About PedalCity</div>
+                    <h2 style="margin-bottom:1rem;">More Than Just Bike Rental</h2>
+                    <p style="margin-bottom:1.5rem;">We started PedalCity with a simple mission: to make urban cycling
+                        accessible, enjoyable, and sustainable. Today, we're the city's leading bicycle rental and tour
+                        service — connecting riders with unforgettable urban experiences.</p>
+                    <div class="about-feature-list">
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <h4>Fully Insured</h4>
+                                <p>All rentals include comprehensive damage and theft insurance.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon"><i class="fas fa-map-signs"></i></div>
+                            <div>
+                                <h4>Expert Local Guides</h4>
+                                <p>Our tour guides know every hidden gem and secret route in the city.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Flexible Scheduling</h4>
+                                <p>Rent by the hour, half-day, or full day. No rigid timelines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TOUR CATEGORIES — OVERLAY CARDS ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label"><i class="fas fa-route"></i> Explore Tours</div>
+                <h2>Popular Tour Categories</h2>
+                <p>Choose from our curated city tours designed for every type of cyclist.</p>
+            </div>
+            <div class="grid grid-3 animate-on-scroll">
+                <div class="tour-overlay-card">
+                    <img src="assets/images/tour-heritage.jpg" alt="Heritage cycling tour through historic architecture"
+                        loading="lazy">
+                    <div class="tour-overlay">
+                        <h3>Heritage Tour</h3>
+                        <p>Explore centuries-old temples, forts, and colonial buildings. A cultural immersion on two
+                            wheels.</p>
+                    </div>
+                </div>
+                <div class="tour-overlay-card">
+                    <img src="assets/images/tour-sunset.jpg" alt="Sunset coastal cycling ride" loading="lazy">
+                    <div class="tour-overlay">
+                        <h3>Sunset Ride</h3>
+                        <p>Chase golden horizons along the waterfront with breathtaking sunset views and ocean breeze.
+                        </p>
+                    </div>
+                </div>
+                <div class="tour-overlay-card">
+                    <img src="assets/images/tour-food.jpg" alt="Street food cycling tour through local markets"
+                        loading="lazy">
+                    <div class="tour-overlay">
+                        <h3>Food Trail Tour</h3>
+                        <p>Pedal through the city's best food streets. Taste authentic local cuisine at hidden gems
+                            spot.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:2.5rem;" class="animate-on-scroll">
+                <a href="tours.html" class="btn btn-primary btn-lg"><i class="fas fa-compass"></i> View All Tours</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label"><i class="fas fa-check-circle"></i> Why PedalCity</div>
+                <h2>Why Riders Choose Us</h2>
+                <p>We go beyond rentals to deliver exceptional cycling experiences every single time.</p>
+            </div>
+            <div class="features-grid animate-on-scroll">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h4>Eco-Friendly</h4>
+                    <p>Zero emissions. Every ride contributes to a greener, cleaner city.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+                    <h4>Expert Guides</h4>
+                    <p>Certified local guides with deep city knowledge and safety training.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h4>Flexible Hours</h4>
+                    <p>Rent from 1 hour to 7 days. Pick the schedule that suits you.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <h4>GPS Tracking</h4>
+                    <p>All bikes equipped with GPS for real-time tracking and route mapping.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Full Insurance</h4>
+                    <p>Ride worry-free with comprehensive coverage on every rental.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-tags"></i></div>
+                    <h4>Group Discounts</h4>
+                    <p>Special pricing for groups of 5+. Perfect for team outings and events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING SNAPSHOT ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label"><i class="fas fa-tag"></i> Pricing Plans</div>
+                <h2>Simple, Transparent Pricing</h2>
+                <p>No hidden fees. Choose the plan that fits your riding style.</p>
+            </div>
+            <div class="pricing-grid animate-on-scroll">
+                <!-- Basic -->
+                <div class="pricing-card">
+                    <div class="pricing-plan-name">Hourly</div>
+                    <div class="pricing-amount">₹99 <span>/ hour</span></div>
+                    <p class="pricing-desc">Quick rides around the city</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> City Cruiser bike</li>
+                        <li><i class="fas fa-check"></i> Helmet included</li>
+                        <li><i class="fas fa-check"></i> Any pickup station</li>
+                        <li><i class="fas fa-check"></i> Basic insurance</li>
+                    </ul>
+                    <a href="fleet.html" class="btn btn-secondary w-full">Get Started</a>
+                </div>
+                <!-- Popular -->
+                <div class="pricing-card popular">
+                    <div class="pricing-plan-name">Half-Day</div>
+                    <div class="pricing-amount">₹349 <span>/ 4 hours</span></div>
+                    <p class="pricing-desc">Best value for city exploration</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> All bike types</li>
+                        <li><i class="fas fa-check"></i> Helmet + lock</li>
+                        <li><i class="fas fa-check"></i> Free station transfer</li>
+                        <li><i class="fas fa-check"></i> Full insurance</li>
+                        <li><i class="fas fa-check"></i> Route map included</li>
+                    </ul>
+                    <a href="fleet.html" class="btn btn-primary w-full">Book Now</a>
+                </div>
+                <!-- Premium -->
+                <div class="pricing-card">
+                    <div class="pricing-plan-name">Full-Day</div>
+                    <div class="pricing-amount">₹599 <span>/ day</span></div>
+                    <p class="pricing-desc">Unlimited riding all day</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Premium bikes + E-bikes</li>
+                        <li><i class="fas fa-check"></i> All accessories</li>
+                        <li><i class="fas fa-check"></i> Multi-station return</li>
+                        <li><i class="fas fa-check"></i> Premium insurance</li>
+                        <li><i class="fas fa-check"></i> Phone holder + charger</li>
+                    </ul>
+                    <a href="fleet.html" class="btn btn-secondary w-full">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INSTAGRAM FEED ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label"><i class="fab fa-instagram"></i> @PedalCity</div>
+                <h2>Follow Our Rides</h2>
+                <p>See what our community is up to. Tag us to get featured!</p>
+            </div>
+            <div class="insta-grid animate-on-scroll">
+                <div class="insta-item"><img src="assets/images/insta-1.jpg" alt="PedalCity cycling lifestyle photo"
+                        loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-2.jpg" alt="City cruiser bicycle rental"
+                        loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-3.jpg" alt="Food trail cycling tour"
+                        loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-4.jpg" alt="Group cycling city tour"
+                        loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-5.jpg" alt="Adventure cycling countryside"
+                        loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-6.jpg" alt="Couple waterfront cycling"
+                        loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VIP COMMUNITY & NEWSLETTER BENTO CTA ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="home2-cta-banner animate-on-scroll">
+                <!-- Left Column: Value Prop & Interactive Form -->
+                <div class="home2-cta-content">
+                    <div class="section-label" style="margin-bottom:0.875rem;">
+                        <i class="fas fa-gift" style="color:var(--primary);"></i> Exclusive Member Perks
+                    </div>
+                    <h2
+                        style="font-size:clamp(1.75rem, 3.2vw, 2.375rem);line-height:1.2;margin-bottom:0.875rem;color:#F8FAFC;">
+                        Join 3,000+ City Riders &<br>
+                        <span
+                            style="background:linear-gradient(135deg,var(--primary),#38BDF8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Claim
+                            ₹200 Off</span> Today
+                    </h2>
+                    <p
+                        style="color:#CBD5E1;font-size:0.9375rem;line-height:1.65;margin-bottom:1.5rem;max-width:480px;font-weight:450;">
+                        Subscribe for weekly scenic route secrets, members-only discount codes, priority weekend bike
+                        unlocks, and free maintenance perks.
+                    </p>
+
+                    <form
+                        onsubmit="event.preventDefault(); alert('🎉 Welcome to PedalCity VIP Club! Use code RIDE200 for ₹200 off your next ride.'); this.reset();"
+                        class="home2-cta-form">
+                        <div class="home2-cta-input-group">
+                            <i class="fas fa-envelope home2-cta-icon"></i>
+                            <input type="email" placeholder="Enter your email address" required class="home2-cta-input"
+                                aria-label="Email address">
+                            <button type="submit" class="btn btn-primary home2-cta-btn">
+                                <span>Get ₹200 Voucher</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="home2-trust-row">
+                        <span class="home2-trust-item">
+                            <i class="fas fa-check-circle" style="color:var(--primary);"></i> ₹200 Instant Voucher
+                        </span>
+                        <span class="home2-trust-item">
+                            <i class="fas fa-shield-alt" style="color:var(--primary);"></i> No Spam Guarantee
+                        </span>
+                        <span class="home2-trust-item">
+                            <i class="fas fa-bolt" style="color:var(--primary);"></i> Weekly Route Secrets
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive VIP Member Pass Card -->
+                <div class="home2-cta-card">
+                    <div class="home2-cta-card-header">
+                        <div style="display:flex;align-items:center;gap:0.75rem;">
+                            <div class="home2-cta-card-avatar-ring">
+                                <i class="fas fa-crown" style="color:var(--primary);font-size:1rem;"></i>
+                            </div>
+                            <div>
+                                <div
+                                    style="font-family:var(--font-heading);font-weight:600;font-size:0.9375rem;color:#F8FAFC;">
+                                    PedalCity VIP Club</div>
+                                <div style="font-size:0.75rem;color:#94A3B8;">Free Lifetime Membership</div>
+                            </div>
+                        </div>
+                        <span class="home2-vip-badge"><span class="avail-dot"></span> Active</span>
+                    </div>
+
+                    <div class="home2-cta-perks">
+                        <div class="home2-perk-row">
+                            <div class="home2-perk-icon"><i class="fas fa-ticket-alt"></i></div>
+                            <div>
+                                <div class="home2-perk-title">₹200 Welcome Voucher</div>
+                                <div class="home2-perk-desc">Auto-applied to any rental or guided tour</div>
+                            </div>
+                        </div>
+                        <div class="home2-perk-row">
+                            <div class="home2-perk-icon"><i class="fas fa-map-marked-alt"></i></div>
+                            <div>
+                                <div class="home2-perk-title">Curated Weekend Trails</div>
+                                <div class="home2-perk-desc">GPS-enabled secret routes direct to your phone</div>
+                            </div>
+                        </div>
+                        <div class="home2-perk-row">
+                            <div class="home2-perk-icon"><i class="fas fa-wrench"></i></div>
+                            <div>
+                                <div class="home2-perk-title">Priority Station Support</div>
+                                <div class="home2-perk-desc">Free helmet fitting & instant bike swap</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="home2-cta-card-footer">
+                        <div class="home2-social-proof">
+                            <div class="home2-avatar-stack">
+                                <img src="assets/images/testimonial-1.jpg" alt="Rider community member">
+                                <img src="assets/images/testimonial-2.jpg" alt="Rider community member">
+                                <img src="assets/images/testimonial-3.jpg" alt="Rider community member">
+                            </div>
+                            <div style="font-size:0.75rem;color:#CBD5E1;">
+                                <strong style="color:#F8FAFC;">3,000+</strong> active riders
+                            </div>
+                        </div>
+                        <div class="home2-rating-pill">
+                            <i class="fas fa-star" style="color:#F59E0B;"></i> 4.9 / 5.0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="main-footer"></div>
+
+    <script src="components.js"></script>
+</body>
+
+</html>

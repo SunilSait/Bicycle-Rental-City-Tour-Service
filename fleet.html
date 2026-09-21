@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore PedalCity's diverse fleet of rental bicycles — city cruisers, mountain bikes, e-bikes, kids' bikes, and tandems. Find your perfect ride with daily rates and real-time availability.">
+    <title>Our Fleet | PedalCity Bicycle Rental & City Tours</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="main-nav"></div>
+
+<!-- PAGE HEADER -->
+<section class="page-header" aria-label="Fleet Header">
+    <div class="page-header-bg"><img src="assets/images/banner-fleet.jpg" alt="PedalCity bicycle fleet at modern rental station"></div>
+    <div class="page-header-overlay"></div>
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Fleet</span></div>
+        <h1>Our Bicycle Fleet</h1>
+        <p>From city cruisers to premium e-bikes — find the perfect ride for every journey and budget.</p>
+    </div>
+</section>
+
+<!-- FILTER TABS -->
+<section class="section">
+    <div class="container">
+        <div class="filter-tabs animate-on-scroll">
+            <button class="filter-tab active" data-filter="all" onclick="switchFilter('all', '.filterable-card')">All Bikes</button>
+            <button class="filter-tab" data-filter="city" onclick="switchFilter('city', '.filterable-card')">City Bikes</button>
+            <button class="filter-tab" data-filter="mountain" onclick="switchFilter('mountain', '.filterable-card')">Mountain</button>
+            <button class="filter-tab" data-filter="ebike" onclick="switchFilter('ebike', '.filterable-card')">E-Bikes</button>
+            <button class="filter-tab" data-filter="kids" onclick="switchFilter('kids', '.filterable-card')">Kids</button>
+        </div>
+
+        <div class="grid grid-3 animate-on-scroll">
+            <!-- City Cruiser -->
+            <div class="card filterable-card" data-category="city">
+                <div class="card-img"><img src="assets/images/bike-city-cruiser.jpg" alt="City Cruiser bicycle" loading="lazy"></div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">City Bike</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--green);font-weight:600;"><span class="avail-dot"></span> 24 Available</span>
+                    </div>
+                    <h3 class="card-title">City Cruiser</h3>
+                    <p class="card-text">Step-through frame with front basket. Ideal for daily urban commuting.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-cog"></i> 7 Speed</span>
+                        <span class="bike-spec"><i class="fas fa-weight-hanging"></i> 14 kg</span>
+                        <span class="bike-spec"><i class="fas fa-ruler-horizontal"></i> Alloy Frame</span>
+                    </div>
+                    <div class="card-price">₹299 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="dashboard.html" class="btn btn-primary btn-sm">Reserve</a>
+                    <a href="#" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+            <!-- Mountain Explorer -->
+            <div class="card filterable-card" data-category="mountain">
+                <div class="card-img"><img src="assets/images/bike-mountain.jpg" alt="Mountain Explorer bicycle" loading="lazy"></div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">Mountain</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--green);font-weight:600;"><span class="avail-dot"></span> 12 Available</span>
+                    </div>
+                    <h3 class="card-title">Mountain Explorer</h3>
+                    <p class="card-text">Full suspension, knobby tires. Conquer trails and rough terrain.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-cog"></i> 21 Speed</span>
+                        <span class="bike-spec"><i class="fas fa-weight-hanging"></i> 16 kg</span>
+                        <span class="bike-spec"><i class="fas fa-ruler-horizontal"></i> Carbon Frame</span>
+                    </div>
+                    <div class="card-price">₹499 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="dashboard.html" class="btn btn-primary btn-sm">Reserve</a>
+                    <a href="#" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+            <!-- E-Bike Pro -->
+            <div class="card filterable-card" data-category="ebike">
+                <div class="card-img"><img src="assets/images/bike-ebike.jpg" alt="E-Bike Pro electric bicycle" loading="lazy"></div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">E-Bike</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--green);font-weight:600;"><span class="avail-dot"></span> 8 Available</span>
+                    </div>
+                    <h3 class="card-title">E-Bike Pro</h3>
+                    <p class="card-text">250W motor, 60km range. Effortless rides with electric pedal assist.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-bolt"></i> 250W Motor</span>
+                        <span class="bike-spec"><i class="fas fa-battery-full"></i> 60 km Range</span>
+                        <span class="bike-spec"><i class="fas fa-ruler-horizontal"></i> Alloy Frame</span>
+                    </div>
+                    <div class="card-price">₹699 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="dashboard.html" class="btn btn-primary btn-sm">Reserve</a>
+                    <a href="#" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+            <!-- Kids Bike -->
+            <div class="card filterable-card" data-category="kids">
+                <div class="card-img"><img src="assets/images/bike-kids.jpg" alt="Kids bicycle for young riders" loading="lazy"></div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">Kids</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--green);font-weight:600;"><span class="avail-dot"></span> 18 Available</span>
+                    </div>
+                    <h3 class="card-title">Junior Rider</h3>
+                    <p class="card-text">Safe, sturdy, and fun. Designed for young riders aged 6–12 years.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-cog"></i> Single Speed</span>
+                        <span class="bike-spec"><i class="fas fa-weight-hanging"></i> 9 kg</span>
+                        <span class="bike-spec"><i class="fas fa-shield-alt"></i> Training Wheels</span>
+                    </div>
+                    <div class="card-price">₹199 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="dashboard.html" class="btn btn-primary btn-sm">Reserve</a>
+                    <a href="#" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+            <!-- Tandem -->
+            <div class="card filterable-card" data-category="city">
+                <div class="card-img"><img src="assets/images/bike-tandem.jpg" alt="Tandem bicycle for couples" loading="lazy"></div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">Tandem</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--amber);font-weight:600;">5 Left</span>
+                    </div>
+                    <h3 class="card-title">Tandem Explorer</h3>
+                    <p class="card-text">Double the fun! Ride together with your partner on this two-seater bike.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-cog"></i> 7 Speed</span>
+                        <span class="bike-spec"><i class="fas fa-weight-hanging"></i> 22 kg</span>
+                        <span class="bike-spec"><i class="fas fa-users"></i> 2-Seater</span>
+                    </div>
+                    <div class="card-price">₹599 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="dashboard.html" class="btn btn-primary btn-sm">Reserve</a>
+                    <a href="#" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+            <!-- E-Bike City -->
+            <div class="card filterable-card" data-category="ebike">
+                <div class="card-img"><img src="assets/images/bike-ebike.jpg" alt="E-Bike City Commuter" loading="lazy"></div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+                        <span class="badge badge-primary">E-Bike</span>
+                        <span style="display:flex;align-items:center;gap:0.375rem;font-size:0.75rem;color:var(--green);font-weight:600;"><span class="avail-dot"></span> 6 Available</span>
+                    </div>
+                    <h3 class="card-title">E-City Commuter</h3>
+                    <p class="card-text">Sleek urban e-bike with integrated lights and fenders for city commuting.</p>
+                    <div class="bike-specs">
+                        <span class="bike-spec"><i class="fas fa-bolt"></i> 350W Motor</span>
+                        <span class="bike-spec"><i class="fas fa-battery-full"></i> 80 km Range</span>
+                        <span class="bike-spec"><i class="fas fa-ruler-horizontal"></i> Carbon Frame</span>
+                    </div>
+                    <div class="card-price">₹899 <span>/ day</span></div>
+                </div>
+                <div class="card-footer">
+                    <a href="dashboard.html" class="btn btn-primary btn-sm">Reserve</a>
+                    <a href="#" class="btn btn-outline btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-plus-circle"></i> Add-Ons</div>
+            <h2>Accessories & Add-Ons</h2>
+            <p>Enhance your ride with premium accessories available at every station.</p>
+        </div>
+        <div class="accessories-grid animate-on-scroll">
+            <div class="accessory-card">
+                <i class="fas fa-hard-hat"></i>
+                <h4>Helmet</h4>
+                <p>₹49 / day</p>
+            </div>
+            <div class="accessory-card">
+                <i class="fas fa-lock"></i>
+                <h4>Cable Lock</h4>
+                <p>₹29 / day</p>
+            </div>
+            <div class="accessory-card">
+                <i class="fas fa-shopping-basket"></i>
+                <h4>Front Basket</h4>
+                <p>₹39 / day</p>
+            </div>
+            <div class="accessory-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h4>Phone Mount</h4>
+                <p>₹19 / day</p>
+            </div>
+            <div class="accessory-card">
+                <i class="fas fa-baby"></i>
+                <h4>Child Seat</h4>
+                <p>₹79 / day</p>
+            </div>
+            <div class="accessory-card">
+                <i class="fas fa-lightbulb"></i>
+                <h4>LED Lights</h4>
+                <p>₹29 / day</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-split-section">
+    <div class="container">
+        <div class="cta-split-card animate-on-scroll">
+            <div class="cta-split-img-wrap">
+                <img src="assets/images/cta-ride.jpg" alt="Scenic city cycling path" loading="lazy">
+                <div class="cta-split-badge">
+                    <div style="width:36px;height:36px;border-radius:var(--radius-lg);background:var(--primary-subtle);display:flex;align-items:center;justify-content:center;color:var(--primary);">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <div style="font-size:0.75rem;color:#94A3B8;font-weight:500;">Free Bike Matching</div>
+                        <div style="font-size:0.9375rem;font-weight:600;color:#F8FAFC;">Expert Ride Advisory</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-split-content">
+                <div class="section-label" style="margin-bottom:0.75rem;">
+                    <i class="fas fa-question-circle"></i> Need Assistance?
+                </div>
+                <h2 style="font-size:clamp(1.75rem, 3vw, 2.25rem);margin-bottom:1rem;">Can't Decide on the Right Bike?</h2>
+                <p style="color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;font-weight:450;">
+                    Our team will help you pick the perfect bicycle based on your experience level, route terrain, and riding comfort preferences.
+                </p>
+
+                <div class="cta-split-perks">
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-bicycle"></i>
+                        <span>Test ride any bike model before booking</span>
+                    </div>
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-user-check"></i>
+                        <span>Custom frame sizing and saddle adjustments</span>
+                    </div>
+                    <div class="cta-split-perk-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Instant support via phone, WhatsApp, or in-person</span>
+                    </div>
+                </div>
+
+                <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-headset"></i> Talk to Us
+                    </a>
+                    <a href="tours.html" class="btn btn-secondary btn-lg">
+                        View Guided Tours
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

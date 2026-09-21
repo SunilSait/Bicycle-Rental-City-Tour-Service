@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PedalCity Customer Dashboard — Browse available bicycles, manage active rentals, extend bookings, download receipts, and view ride history.">
+    <title>Dashboard | PedalCity Bicycle Rental & City Tours</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+<!-- Mobile Menu Button -->
+<button class="dashboard-mobile-toggle" onclick="toggleDashboardSidebar()" aria-label="Open Sidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Backdrop -->
+<div class="dashboard-backdrop" onclick="toggleDashboardSidebar()"></div>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="dashboard-sidebar" id="dashboard-sidebar">
+    <div class="sidebar-header">
+        <a href="index.html" class="nav-logo" aria-label="PedalCity Home" style="margin-bottom:0;">
+            <img src="logo.svg" alt="PedalCity Logo" width="34" height="34" style="width:34px;height:34px;object-fit:contain;display:block;flex-shrink:0;">
+            <div class="nav-logo-text">
+                <span class="brand-top" style="font-size:0.9375rem;">PedalCity</span>
+                <span class="brand-bottom" style="font-size:0.5625rem;">Dashboard</span>
+            </div>
+        </a>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active" onclick="switchDashTab('overview', this)" id="nav-overview">
+            <i class="fas fa-th-large"></i> Overview
+        </a>
+        <a href="#" class="sidebar-link" onclick="switchDashTab('browse', this)" id="nav-browse">
+            <i class="fas fa-bicycle"></i> Browse Bikes
+        </a>
+        <a href="#" class="sidebar-link" onclick="switchDashTab('active', this)" id="nav-active">
+            <i class="fas fa-clock"></i> Active Rentals
+            <span class="sidebar-badge">2</span>
+        </a>
+        <a href="#" class="sidebar-link" onclick="switchDashTab('history', this)" id="nav-history">
+            <i class="fas fa-history"></i> Ride History
+        </a>
+        <a href="#" class="sidebar-link" onclick="switchDashTab('book', this)" id="nav-book">
+            <i class="fas fa-calendar-plus"></i> New Booking
+        </a>
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Account</p>
+
+        <a href="#" class="sidebar-link" onclick="switchDashTab('profile', this)" id="nav-profile">
+            <i class="fas fa-user"></i> My Profile
+        </a>
+        <a href="#" class="sidebar-link" onclick="switchDashTab('settings', this)" id="nav-settings">
+            <i class="fas fa-cog"></i> Settings
+        </a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="sidebar-footer-toggles">
+            <button onclick="toggleTheme()" class="sidebar-toggle-btn" title="Toggle Theme">
+                <i class="fas fa-moon theme-icon"></i>
+            </button>
+            <button onclick="toggleDir()" class="sidebar-toggle-btn" title="Toggle Direction">
+                <span class="dir-label" style="font-size:0.5625rem;font-weight:600;">LTR</span>
+            </button>
+        </div>
+        <a href="login.html" class="sidebar-link logout-link">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+    </div>
+</aside>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="dashboard-main">
+    <!-- Top Bar -->
+    <header class="dashboard-topbar">
+        <div>
+            <h2 class="dashboard-page-title" id="dash-page-title">Overview</h2>
+            <p class="dashboard-page-subtitle" id="dash-page-subtitle">Welcome back, Rider!</p>
+        </div>
+        <div class="dashboard-topbar-actions">
+            <div class="dashboard-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search bikes, tours..." class="dashboard-search-input">
+            </div>
+            <button onclick="toggleDir()" class="dashboard-notification-btn" title="Toggle Direction" aria-label="Toggle text direction">
+                <span class="dir-label" style="font-size:0.625rem;font-weight:600;">LTR</span>
+            </button>
+            <button onclick="toggleTheme()" class="dashboard-notification-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+                <i class="fas fa-moon theme-icon"></i>
+            </button>
+            <button class="dashboard-notification-btn" title="Notifications">
+                <i class="fas fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+            <div class="dashboard-user-avatar" title="Profile">
+                <span>RP</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== TAB: OVERVIEW ===== -->
+    <div class="dash-tab active" id="tab-overview">
+        <!-- Metric Cards -->
+        <div class="dash-metrics-grid">
+            <div class="dash-metric-card">
+                <div class="dash-metric-icon"><i class="fas fa-bicycle"></i></div>
+                <div>
+                    <div class="dash-metric-value">2</div>
+                    <div class="dash-metric-label">Active Rentals</div>
+                </div>
+            </div>
+            <div class="dash-metric-card">
+                <div class="dash-metric-icon"><i class="fas fa-route"></i></div>
+                <div>
+                    <div class="dash-metric-value">12</div>
+                    <div class="dash-metric-label">Total Rides</div>
+                </div>
+            </div>
+            <div class="dash-metric-card">
+                <div class="dash-metric-icon"><i class="fas fa-road"></i></div>
+                <div>
+                    <div class="dash-metric-value">156 km</div>
+                    <div class="dash-metric-label">Distance Covered</div>
+                </div>
+            </div>
+            <div class="dash-metric-card">
+                <div class="dash-metric-icon"><i class="fas fa-leaf"></i></div>
+                <div>
+                    <div class="dash-metric-value">8.4 kg</div>
+                    <div class="dash-metric-label">CO₂ Saved</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="dash-section">
+            <h3 class="dash-section-title">Quick Actions</h3>
+            <div class="quick-actions-grid">
+                <button class="quick-action-btn" onclick="switchDashTab('book', document.getElementById('nav-book'))">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>New Booking</span>
+                </button>
+                <button class="quick-action-btn" onclick="switchDashTab('browse', document.getElementById('nav-browse'))">
+                    <i class="fas fa-search"></i>
+                    <span>Browse Bikes</span>
+                </button>
+                <button class="quick-action-btn" onclick="switchDashTab('active', document.getElementById('nav-active'))">
+                    <i class="fas fa-clock"></i>
+                    <span>Active Rentals</span>
+                </button>
+                <button class="quick-action-btn" onclick="switchDashTab('history', document.getElementById('nav-history'))">
+                    <i class="fas fa-download"></i>
+                    <span>Receipts</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Current Rentals Preview -->
+        <div class="dash-section">
+            <h3 class="dash-section-title">Current Rentals</h3>
+            <div class="dash-rental-cards">
+                <div class="dash-rental-card">
+                    <img src="assets/images/dashboard-bike-1.jpg" alt="City Cruiser rental" class="dash-rental-img">
+                    <div class="dash-rental-info">
+                        <h4>City Cruiser</h4>
+                        <p>Central Station → Marina Beach</p>
+                        <div class="dash-rental-meta">
+                            <span><i class="fas fa-calendar"></i> Sep 20, 2026</span>
+                            <span><i class="fas fa-clock"></i> Return by 6:00 PM</span>
+                        </div>
+                        <div class="dash-rental-countdown">
+                            <span class="countdown-badge active"><i class="fas fa-hourglass-half"></i> 4h 30m remaining</span>
+                        </div>
+                    </div>
+                    <div class="dash-rental-actions">
+                        <button class="btn btn-primary btn-sm" onclick="alert('Rental extended by 2 hours!')">Extend</button>
+                        <button class="btn btn-outline btn-sm" onclick="alert('Return confirmed!')">Return</button>
+                    </div>
+                </div>
+                <div class="dash-rental-card">
+                    <img src="assets/images/dashboard-bike-3.jpg" alt="E-Bike Pro rental" class="dash-rental-img">
+                    <div class="dash-rental-info">
+                        <h4>E-Bike Pro</h4>
+                        <p>Tech Park Hub → Heritage Quarter</p>
+                        <div class="dash-rental-meta">
+                            <span><i class="fas fa-calendar"></i> Sep 20, 2026</span>
+                            <span><i class="fas fa-clock"></i> Return by 8:00 PM</span>
+                        </div>
+                        <div class="dash-rental-countdown">
+                            <span class="countdown-badge"><i class="fas fa-hourglass-half"></i> 6h 30m remaining</span>
+                        </div>
+                    </div>
+                    <div class="dash-rental-actions">
+                        <button class="btn btn-primary btn-sm" onclick="alert('Rental extended by 2 hours!')">Extend</button>
+                        <button class="btn btn-outline btn-sm" onclick="alert('Return confirmed!')">Return</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="dash-section">
+            <h3 class="dash-section-title">Recent Activity</h3>
+            <div class="dash-activity-list">
+                <div class="dash-activity-item">
+                    <div class="dash-activity-icon"><i class="fas fa-bicycle"></i></div>
+                    <div class="dash-activity-content">
+                        <h5>City Cruiser booked</h5>
+                        <p>Pickup from Central Station</p>
+                    </div>
+                    <div class="dash-activity-time">Today, 9:30 AM</div>
+                </div>
+                <div class="dash-activity-item">
+                    <div class="dash-activity-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="dash-activity-content">
+                        <h5>Mountain Explorer returned</h5>
+                        <p>Returned at Heritage Quarter station</p>
+                    </div>
+                    <div class="dash-activity-time">Yesterday, 5:00 PM</div>
+                </div>
+                <div class="dash-activity-item">
+                    <div class="dash-activity-icon"><i class="fas fa-receipt"></i></div>
+                    <div class="dash-activity-content">
+                        <h5>Receipt generated</h5>
+                        <p>Receipt #PC-2026-0045 available for download</p>
+                    </div>
+                    <div class="dash-activity-time">Sep 18, 2026</div>
+                </div>
+                <div class="dash-activity-item">
+                    <div class="dash-activity-icon"><i class="fas fa-star"></i></div>
+                    <div class="dash-activity-content">
+                        <h5>Heritage Tour rated 5★</h5>
+                        <p>Thanks for your review!</p>
+                    </div>
+                    <div class="dash-activity-time">Sep 16, 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TAB: BROWSE BIKES ===== -->
+    <div class="dash-tab" id="tab-browse">
+        <div class="dash-section">
+            <h3 class="dash-section-title">Available Bicycles</h3>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Real-time availability across all stations. Click to book.</p>
+            <div class="filter-tabs" style="margin-bottom:1.5rem;">
+                <button class="filter-tab active" data-filter="all" onclick="switchFilter('all', '.dash-bike-card')">All</button>
+                <button class="filter-tab" data-filter="city" onclick="switchFilter('city', '.dash-bike-card')">City</button>
+                <button class="filter-tab" data-filter="mountain" onclick="switchFilter('mountain', '.dash-bike-card')">Mountain</button>
+                <button class="filter-tab" data-filter="ebike" onclick="switchFilter('ebike', '.dash-bike-card')">E-Bike</button>
+                <button class="filter-tab" data-filter="kids" onclick="switchFilter('kids', '.dash-bike-card')">Kids</button>
+            </div>
+            <div class="dash-bikes-grid">
+                <div class="dash-bike-card" data-category="city">
+                    <img src="assets/images/dashboard-bike-1.jpg" alt="City Cruiser">
+                    <div class="dash-bike-info">
+                        <h4>City Cruiser</h4>
+                        <p>7 Speed · Alloy · 14 kg</p>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+                            <span class="card-price" style="font-size:1rem;">₹299<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 24</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
+                </div>
+                <div class="dash-bike-card" data-category="mountain">
+                    <img src="assets/images/dashboard-bike-2.jpg" alt="Mountain Explorer">
+                    <div class="dash-bike-info">
+                        <h4>Mountain Explorer</h4>
+                        <p>21 Speed · Carbon · 16 kg</p>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+                            <span class="card-price" style="font-size:1rem;">₹499<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 12</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
+                </div>
+                <div class="dash-bike-card" data-category="ebike">
+                    <img src="assets/images/dashboard-bike-3.jpg" alt="E-Bike Pro">
+                    <div class="dash-bike-info">
+                        <h4>E-Bike Pro</h4>
+                        <p>250W · 60km Range · Alloy</p>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+                            <span class="card-price" style="font-size:1rem;">₹699<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 8</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
+                </div>
+                <div class="dash-bike-card" data-category="city">
+                    <img src="assets/images/dashboard-bike-4.jpg" alt="Tandem Explorer">
+                    <div class="dash-bike-info">
+                        <h4>Tandem Explorer</h4>
+                        <p>7 Speed · 2-Seater · 22 kg</p>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+                            <span class="card-price" style="font-size:1rem;">₹599<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--amber);font-weight:600;">5 left</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
+                </div>
+                <div class="dash-bike-card" data-category="kids">
+                    <img src="assets/images/bike-kids.jpg" alt="Junior Rider">
+                    <div class="dash-bike-info">
+                        <h4>Junior Rider</h4>
+                        <p>Single Speed · 9 kg · Ages 6–12</p>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+                            <span class="card-price" style="font-size:1rem;">₹199<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 18</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
+                </div>
+                <div class="dash-bike-card" data-category="ebike">
+                    <img src="assets/images/bike-ebike.jpg" alt="E-City Commuter">
+                    <div class="dash-bike-info">
+                        <h4>E-City Commuter</h4>
+                        <p>350W · 80km Range · Carbon</p>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+                            <span class="card-price" style="font-size:1rem;">₹899<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 6</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
+                </div>
+                <div class="dash-bike-card" data-category="mountain">
+                    <img src="assets/images/bike-mountain.jpg" alt="Trail Master Pro">
+                    <div class="dash-bike-info">
+                        <h4>Trail Master Pro</h4>
+                        <p>27 Speed · Hydraulic Disc · 13 kg</p>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+                            <span class="card-price" style="font-size:1rem;">₹549<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 10</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
+                </div>
+                <div class="dash-bike-card" data-category="city">
+                    <img src="assets/images/bike-city-cruiser.jpg" alt="Vintage Dutch Commuter">
+                    <div class="dash-bike-info">
+                        <h4>Vintage Dutch</h4>
+                        <p>3 Speed · Front Basket · 13 kg</p>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+                            <span class="card-price" style="font-size:1rem;">₹249<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 15</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TAB: ACTIVE RENTALS ===== -->
+    <div class="dash-tab" id="tab-active">
+        <div class="dash-section">
+            <h3 class="dash-section-title">Active Rentals (2)</h3>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Your currently rented bicycles with return deadlines and extension options.</p>
+            <div class="dash-rental-cards">
+                <div class="dash-rental-card">
+                    <img src="assets/images/dashboard-bike-1.jpg" alt="City Cruiser" class="dash-rental-img">
+                    <div class="dash-rental-info">
+                        <h4>City Cruiser</h4>
+                        <p>Booking #PC-2026-0047 · Central Station → Marina Beach</p>
+                        <div class="dash-rental-meta">
+                            <span><i class="fas fa-calendar"></i> Sep 20, 2026</span>
+                            <span><i class="fas fa-clock"></i> Return by 6:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Any Station</span>
+                        </div>
+                        <div class="dash-rental-countdown">
+                            <span class="countdown-badge active"><i class="fas fa-hourglass-half"></i> 4h 30m remaining</span>
+                        </div>
+                        <div class="dash-rental-details">
+                            <div><strong>Rental Duration:</strong> Half-Day (4 hours)</div>
+                            <div><strong>Insurance:</strong> Standard Coverage</div>
+                            <div><strong>Deposit:</strong> ₹500 (refundable)</div>
+                            <div><strong>Total Paid:</strong> ₹398</div>
+                        </div>
+                    </div>
+                    <div class="dash-rental-actions">
+                        <button class="btn btn-primary btn-sm" onclick="alert('Rental extended by 2 hours! New return time: 8:00 PM.')"><i class="fas fa-plus"></i> Extend 2h</button>
+                        <button class="btn btn-outline btn-sm" onclick="alert('Return initiated. Please drop off at any station.')"><i class="fas fa-undo"></i> Return</button>
+                    </div>
+                </div>
+                <div class="dash-rental-card">
+                    <img src="assets/images/dashboard-bike-3.jpg" alt="E-Bike Pro" class="dash-rental-img">
+                    <div class="dash-rental-info">
+                        <h4>E-Bike Pro</h4>
+                        <p>Booking #PC-2026-0048 · Tech Park Hub → Heritage Quarter</p>
+                        <div class="dash-rental-meta">
+                            <span><i class="fas fa-calendar"></i> Sep 20, 2026</span>
+                            <span><i class="fas fa-clock"></i> Return by 8:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Any Station</span>
+                        </div>
+                        <div class="dash-rental-countdown">
+                            <span class="countdown-badge"><i class="fas fa-hourglass-half"></i> 6h 30m remaining</span>
+                        </div>
+                        <div class="dash-rental-details">
+                            <div><strong>Rental Duration:</strong> Full-Day</div>
+                            <div><strong>Insurance:</strong> Premium Coverage</div>
+                            <div><strong>Deposit:</strong> ₹0 (premium plan)</div>
+                            <div><strong>Total Paid:</strong> ₹798</div>
+                        </div>
+                    </div>
+                    <div class="dash-rental-actions">
+                        <button class="btn btn-primary btn-sm" onclick="alert('Rental extended by 2 hours!')"><i class="fas fa-plus"></i> Extend 2h</button>
+                        <button class="btn btn-outline btn-sm" onclick="alert('Return initiated.')"><i class="fas fa-undo"></i> Return</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TAB: RIDE HISTORY ===== -->
+    <div class="dash-tab" id="tab-history">
+        <div class="dash-section">
+            <h3 class="dash-section-title">Ride History & Receipts</h3>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Your past rentals with downloadable receipts and signed agreements.</p>
+            <div class="dash-table-wrapper">
+                <table class="dash-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Bicycle</th>
+                            <th>Date</th>
+                            <th>Duration</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>PC-2026-0045</code></td>
+                            <td>Mountain Explorer</td>
+                            <td>Sep 18, 2026</td>
+                            <td>Full-Day</td>
+                            <td>₹499</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>
+                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')"><i class="fas fa-download"></i> Receipt</button>
+                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading signed agreement PDF...')"><i class="fas fa-file-signature"></i> Agreement</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>PC-2026-0042</code></td>
+                            <td>City Cruiser</td>
+                            <td>Sep 15, 2026</td>
+                            <td>Half-Day</td>
+                            <td>₹349</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>
+                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')"><i class="fas fa-download"></i> Receipt</button>
+                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading signed agreement PDF...')"><i class="fas fa-file-signature"></i> Agreement</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>PC-2026-0038</code></td>
+                            <td>E-Bike Pro</td>
+                            <td>Sep 12, 2026</td>
+                            <td>Hourly (3h)</td>
+                            <td>₹297</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>
+                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')"><i class="fas fa-download"></i> Receipt</button>
+                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading signed agreement PDF...')"><i class="fas fa-file-signature"></i> Agreement</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>PC-2026-0031</code></td>
+                            <td>Tandem Explorer</td>
+                            <td>Sep 8, 2026</td>
+                            <td>Full-Day</td>
+                            <td>₹599</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>
+                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')"><i class="fas fa-download"></i> Receipt</button>
+                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading signed agreement PDF...')"><i class="fas fa-file-signature"></i> Agreement</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>PC-2026-0025</code></td>
+                            <td>City Cruiser</td>
+                            <td>Sep 3, 2026</td>
+                            <td>Half-Day</td>
+                            <td>₹349</td>
+                            <td><span class="status-badge cancelled">Cancelled</span></td>
+                            <td><span style="font-size:0.75rem;color:var(--text-muted);">N/A</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TAB: NEW BOOKING ===== -->
+    <div class="dash-tab" id="tab-book">
+        <div class="dash-section">
+            <h3 class="dash-section-title">New Booking</h3>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select your bicycle, pickup location, duration, and complete your booking.</p>
+            <form class="booking-form" onsubmit="event.preventDefault(); alert('Booking confirmed! Your bicycle will be ready at the selected station. Booking ID: PC-2026-0049'); switchDashTab('active', document.getElementById('nav-active'));">
+                <div class="booking-form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="bk-bike">Bicycle Type</label>
+                        <select id="bk-bike" class="form-select" required>
+                            <option value="" disabled selected>Select bicycle</option>
+                            <option>City Cruiser — ₹299/day</option>
+                            <option>Mountain Explorer — ₹499/day</option>
+                            <option>E-Bike Pro — ₹699/day</option>
+                            <option>Junior Rider — ₹199/day</option>
+                            <option>Tandem Explorer — ₹599/day</option>
+                            <option>E-City Commuter — ₹899/day</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="bk-location">Pickup Location</label>
+                        <select id="bk-location" class="form-select" required>
+                            <option value="" disabled selected>Select station</option>
+                            <option>Central Station — 42 Main St</option>
+                            <option>Marina Beach — 15 Beach Rd</option>
+                            <option>University Campus — 8 College Ave</option>
+                            <option>Heritage Quarter — 3 Temple St</option>
+                            <option>Tech Park Hub — 120 IT Corridor</option>
+                            <option>Central Park Gate — 1 Park Ave</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="bk-date">Pickup Date</label>
+                        <input type="date" id="bk-date" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="bk-time">Pickup Time</label>
+                        <input type="time" id="bk-time" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="bk-duration">Rental Duration</label>
+                        <select id="bk-duration" class="form-select" required>
+                            <option value="" disabled selected>Select duration</option>
+                            <option>Hourly (1 hour) — ₹99</option>
+                            <option>Hourly (2 hours) — ₹198</option>
+                            <option>Hourly (3 hours) — ₹297</option>
+                            <option>Half-Day (4 hours) — ₹349</option>
+                            <option>Full-Day (8 hours) — ₹599</option>
+                            <option>2 Days — ₹1,099</option>
+                            <option>Weekly (7 days) — ₹3,499</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="bk-insurance">Insurance Plan</label>
+                        <select id="bk-insurance" class="form-select">
+                            <option>Basic (Free)</option>
+                            <option>Standard (₹49/day)</option>
+                            <option>Premium (₹99/day)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="bk-notes">Special Requests (Optional)</label>
+                    <textarea id="bk-notes" class="form-textarea" placeholder="Any special requirements — child seat, phone mount, etc."></textarea>
+                </div>
+                <div class="form-group" style="margin-bottom:1.5rem;">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="bk-terms" required>
+                        <label for="bk-terms">I agree to the <a href="rules.html" class="link-primary" target="_blank">Rental Rules</a> and <a href="#" class="link-primary">Deposit Policy</a></label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== TAB: PROFILE ===== -->
+    <div class="dash-tab" id="tab-profile">
+        <div class="dash-section">
+            <h3 class="dash-section-title">My Profile</h3>
+            <div class="profile-header">
+                <div class="profile-avatar"><span>RP</span></div>
+                <div>
+                    <h4>Ravi Patel</h4>
+                    <p style="color:var(--text-muted);">ravi.patel@email.com · +91 98765 43210</p>
+                    <p style="color:var(--text-muted);font-size:0.8125rem;">Member since September 2026</p>
+                </div>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Profile updated successfully!');" style="margin-top:2rem;">
+                <div class="booking-form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="pf-name">Full Name</label>
+                        <input type="text" id="pf-name" class="form-input" value="Ravi Patel">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="pf-email">Email</label>
+                        <input type="email" id="pf-email" class="form-input" value="ravi.patel@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="pf-phone">Phone</label>
+                        <input type="tel" id="pf-phone" class="form-input" value="+91 98765 43210">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="pf-city">City</label>
+                        <input type="text" id="pf-city" class="form-input" value="Chennai">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== TAB: SETTINGS ===== -->
+    <div class="dash-tab" id="tab-settings">
+        <div class="dash-section">
+            <h3 class="dash-section-title">Settings</h3>
+            <div class="settings-group">
+                <h4>Notifications</h4>
+                <div class="setting-item"><span>Email notifications</span><input type="checkbox" checked></div>
+                <div class="setting-item"><span>SMS alerts</span><input type="checkbox" checked></div>
+                <div class="setting-item"><span>Rental reminders</span><input type="checkbox" checked></div>
+                <div class="setting-item"><span>Promotional offers</span><input type="checkbox"></div>
+            </div>
+            <div class="settings-group">
+                <h4>Privacy</h4>
+                <div class="setting-item"><span>Share ride statistics</span><input type="checkbox"></div>
+                <div class="setting-item"><span>Public profile</span><input type="checkbox"></div>
+            </div>
+            <div class="settings-group">
+                <h4>Account</h4>
+                <button class="btn btn-outline btn-sm" onclick="alert('Password change email sent!')"><i class="fas fa-key"></i> Change Password</button>
+                <button class="btn btn-outline btn-sm" style="margin-left:0.5rem;color:var(--error);border-color:var(--error);" onclick="if(confirm('Are you sure you want to delete your account? This action cannot be undone.')) alert('Account deletion request submitted.');"><i class="fas fa-trash"></i> Delete Account</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="components.js"></script>
+<script>
+// Dashboard-specific initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove default nav/footer injection for dashboard
+    const mainNav = document.getElementById('main-nav');
+    const mainFooter = document.getElementById('main-footer');
+    if (mainNav) mainNav.remove();
+    if (mainFooter) mainFooter.remove();
+
+    // Auth theme/dir init
+    initAuthPage();
+
+    // Set today's date as default for booking
+    const dateInput = document.getElementById('bk-date');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+    }
+});
+
+function switchDashTab(tabId, linkEl) {
+    // Hide all tabs
+    document.querySelectorAll('.dash-tab').forEach(tab => tab.classList.remove('active'));
+    // Show target
+    const target = document.getElementById('tab-' + tabId);
+    if (target) target.classList.add('active');
+
+    // Update sidebar active
+    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+    if (linkEl) linkEl.classList.add('active');
+
+    // Update title
+    const titles = {
+        overview: ['Overview', 'Welcome back, Rider!'],
+        browse: ['Browse Bikes', 'Real-time availability across all stations'],
+        active: ['Active Rentals', 'Your currently rented bicycles'],
+        history: ['Ride History', 'Past rentals, receipts & agreements'],
+        book: ['New Booking', 'Reserve your next ride'],
+        profile: ['My Profile', 'Manage your account details'],
+        settings: ['Settings', 'Notification & privacy preferences'],
+    };
+    const t = titles[tabId] || ['Dashboard', ''];
+    document.getElementById('dash-page-title').textContent = t[0];
+    document.getElementById('dash-page-subtitle').textContent = t[1];
+
+    // Close mobile sidebar
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    const backdrop = document.querySelector('.dashboard-backdrop');
+    if (sidebar) sidebar.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+
+    // Prevent default link navigation
+    if (event) event.preventDefault();
+}
+</script>
+</body>
+</html>

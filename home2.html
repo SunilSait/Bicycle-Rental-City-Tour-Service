@@ -20,16 +20,13 @@
     <section class="hero-full">
         <div class="hero-slider" id="hero-slider">
             <div class="hero-slide active">
-                <img src="assets/images/hero-group-ride.jpg" alt="Group of cyclists on a guided city tour"
-                    loading="eager">
+                <img src="assets/images/home2-hero-1.jpg" alt="Diverse group of friends cycling on modern commuter bikes across a grand European city avenue" loading="eager">
             </div>
             <div class="hero-slide">
-                <img src="assets/images/hero-sunset-ride.jpg"
-                    alt="Cyclist silhouette riding along coastal path at sunset" loading="lazy">
+                <img src="assets/images/home2-hero-2.jpg" alt="Joyful cyclists riding along a scenic oceanfront promenade at golden hour sunset" loading="lazy">
             </div>
             <div class="hero-slide">
-                <img src="assets/images/hero-park-cycling.jpg"
-                    alt="Cyclist riding through lush urban park with city skyline" loading="lazy">
+                <img src="assets/images/home2-hero-3.jpg" alt="Cyclists riding on an elevated modern architectural greenway bridge surrounded by lush trees" loading="lazy">
             </div>
         </div>
         <div class="hero-full-overlay"></div>
@@ -150,8 +147,7 @@
             </div>
             <div class="grid grid-3 animate-on-scroll">
                 <div class="tour-overlay-card">
-                    <img src="assets/images/tour-heritage.jpg" alt="Heritage cycling tour through historic architecture"
-                        loading="lazy">
+                    <img src="assets/images/home2-tour-heritage.jpg" alt="Joyful cyclists riding past historic cathedral architecture in old town square" loading="lazy">
                     <div class="tour-overlay">
                         <h3>Heritage Tour</h3>
                         <p>Explore centuries-old temples, forts, and colonial buildings. A cultural immersion on two
@@ -159,7 +155,7 @@
                     </div>
                 </div>
                 <div class="tour-overlay-card">
-                    <img src="assets/images/tour-sunset.jpg" alt="Sunset coastal cycling ride" loading="lazy">
+                    <img src="assets/images/home2-tour-sunset.jpg" alt="Friends cycling along an illuminated coastal pier at golden sunset" loading="lazy">
                     <div class="tour-overlay">
                         <h3>Sunset Ride</h3>
                         <p>Chase golden horizons along the waterfront with breathtaking sunset views and ocean breeze.
@@ -167,8 +163,7 @@
                     </div>
                 </div>
                 <div class="tour-overlay-card">
-                    <img src="assets/images/tour-food.jpg" alt="Street food cycling tour through local markets"
-                        loading="lazy">
+                    <img src="assets/images/home2-tour-food.jpg" alt="Tourists on a culinary bicycle tour tasting authentic local food street delicacies" loading="lazy">
                     <div class="tour-overlay">
                         <h3>Food Trail Tour</h3>
                         <p>Pedal through the city's best food streets. Taste authentic local cuisine at hidden gems
@@ -225,8 +220,95 @@
         </div>
     </section>
 
+    <!-- ========== WHAT CUSTOMERS SAY — HORIZONTAL REVIEWS CAROUSEL ========== -->
+    <section class="section section-alt reviews-carousel-section">
+        <div class="container">
+            <div class="reviews-header-wrap animate-on-scroll">
+                <div class="reviews-header-left">
+                    <div class="section-label"><i class="fas fa-quote-left"></i> Rider Feedback</div>
+                    <h2>What Customers Say</h2>
+                    <p>Real reviews from riders and tourists who explored the city with PedalCity.</p>
+                </div>
+                <div class="reviews-controls">
+                    <button type="button" class="review-nav-btn prev" onclick="prevCustomerReview()" aria-label="Previous review" title="Previous review">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button type="button" class="review-nav-btn next" onclick="nextCustomerReview()" aria-label="Next review" title="Next review">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Single Horizontal Carousel Track (1 card per slide, 3 slides total) -->
+            <div class="reviews-carousel-viewport animate-on-scroll">
+                <div class="reviews-track" id="reviewsTrack">
+                    <!-- Slide 1: Review 1 -->
+                    <div class="review-carousel-card">
+                        <div class="review-card-top">
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="review-verified-badge"><i class="fas fa-check-circle"></i> Verified Tour</span>
+                        </div>
+                        <p class="review-quote-text">"The heritage tour was absolutely magical. Our guide knew every hidden alley and historic courtyard. The bikes were pristine and comfortable!"</p>
+                        <div class="review-author-info">
+                            <img src="assets/images/testimonial-1.jpg" alt="Priya Sharma — verified customer" class="review-author-avatar" loading="lazy">
+                            <div>
+                                <div class="review-author-name">Priya Sharma</div>
+                                <div class="review-author-role">Heritage Tour Rider</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Review 2 -->
+                    <div class="review-carousel-card">
+                        <div class="review-card-top">
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="review-verified-badge"><i class="fas fa-check-circle"></i> Verified Rental</span>
+                        </div>
+                        <p class="review-quote-text">"Rented an e-bike for a weekend getaway with friends. The battery lasted the entire 60km route with smooth pedal assist and zero hassle."</p>
+                        <div class="review-author-info">
+                            <img src="assets/images/testimonial-2.jpg" alt="Arjun Mehta — verified customer" class="review-author-avatar" loading="lazy">
+                            <div>
+                                <div class="review-author-name">Arjun Mehta</div>
+                                <div class="review-author-role">E-Bike Weekend Explorer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Review 3 -->
+                    <div class="review-carousel-card">
+                        <div class="review-card-top">
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="review-verified-badge"><i class="fas fa-check-circle"></i> Monthly Member</span>
+                        </div>
+                        <p class="review-quote-text">"I use PedalCity every single day for my office commute. It's affordable, reliable, and saves me 30 minutes of peak traffic every morning."</p>
+                        <div class="review-author-info">
+                            <img src="assets/images/testimonial-3.jpg" alt="Sneha Patel — verified customer" class="review-author-avatar" loading="lazy">
+                            <div>
+                                <div class="review-author-name">Sneha Patel</div>
+                                <div class="review-author-role">Daily Commuter</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots Pagination (3 slides) -->
+            <div class="reviews-dots-container animate-on-scroll">
+                <button type="button" class="review-dot active" onclick="goToCustomerReview(0)" aria-label="Review slide 1"></button>
+                <button type="button" class="review-dot" onclick="goToCustomerReview(1)" aria-label="Review slide 2"></button>
+                <button type="button" class="review-dot" onclick="goToCustomerReview(2)" aria-label="Review slide 3"></button>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== PRICING SNAPSHOT ========== -->
-    <section class="section section-alt">
+    <section class="section">
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-label"><i class="fas fa-tag"></i> Pricing Plans</div>
@@ -288,18 +370,12 @@
                 <p>See what our community is up to. Tag us to get featured!</p>
             </div>
             <div class="insta-grid animate-on-scroll">
-                <div class="insta-item"><img src="assets/images/insta-1.jpg" alt="PedalCity cycling lifestyle photo"
-                        loading="lazy"></div>
-                <div class="insta-item"><img src="assets/images/insta-2.jpg" alt="City cruiser bicycle rental"
-                        loading="lazy"></div>
-                <div class="insta-item"><img src="assets/images/insta-3.jpg" alt="Food trail cycling tour"
-                        loading="lazy"></div>
-                <div class="insta-item"><img src="assets/images/insta-4.jpg" alt="Group cycling city tour"
-                        loading="lazy"></div>
-                <div class="insta-item"><img src="assets/images/insta-5.jpg" alt="Adventure cycling countryside"
-                        loading="lazy"></div>
-                <div class="insta-item"><img src="assets/images/insta-6.jpg" alt="Couple waterfront cycling"
-                        loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-1.jpg" alt="PedalCity community ride lifestyle photo" loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-2.jpg" alt="Friends enjoying an artisan coffee break after urban cycling" loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-3.jpg" alt="Adventurous rider taking in alpine mountain panorama at sunrise" loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-4.jpg" alt="Night city cruise with glowing bicycle LED lights on city boulevard" loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-5.jpg" alt="Smiling rider on a sunny tropical ocean boardwalk" loading="lazy"></div>
+                <div class="insta-item"><img src="assets/images/insta-6.jpg" alt="Waterfront sunset bicycle ride with community members" loading="lazy"></div>
             </div>
         </div>
     </section>

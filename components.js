@@ -746,6 +746,100 @@ function updateCalendarHeader() {
     selectTourDate(1);
 }
 
+/* ─── CUSTOMER REVIEWS CAROUSEL (1 CARD PER SLIDE, 3 SLIDES) ─── */
+let currentReviewIndex = 0;
+
+function updateReviewsCarousel() {
+    const track = document.getElementById('reviewsTrack');
+    const cards = document.querySelectorAll('.review-carousel-card');
+    const dots = document.querySelectorAll('.review-dot');
+    if (!track || !cards.length) return;
+
+    const maxIndex = cards.length - 1;
+
+    if (currentReviewIndex > maxIndex) {
+        currentReviewIndex = 0;
+    }
+    if (currentReviewIndex < 0) {
+        currentReviewIndex = maxIndex;
+    }
+
+    const card = cards[0];
+    const cardWidth = card.offsetWidth;
+    const computedGap = parseFloat(window.getComputedStyle(track).gap) || 32;
+    const slideAmount = (cardWidth + computedGap) * currentReviewIndex;
+
+    const isRTL = document.documentElement.getAttribute('dir') === 'rtl' || document.body.getAttribute('dir') === 'rtl';
+    track.style.transform = `translateX(${isRTL ? slideAmount : -slideAmount}px)`;
+
+    dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentReviewIndex);
+    });
+}
+
+function nextCustomerReview() {
+    const cards = document.querySelectorAll('.review-carousel-card');
+    if (!cards.length) return;
+    if (currentReviewIndex >= cards.length - 1) {
+        currentReviewIndex = 0;
+    } else {
+        currentReviewIndex++;
+    }
+    updateReviewsCarousel();
+}
+
+function prevCustomerReview() {
+    const cards = document.querySelectorAll('.review-carousel-card');
+    if (!cards.length) return;
+    if (currentReviewIndex <= 0) {
+        currentReviewIndex = cards.length - 1;
+    } else {
+        currentReviewIndex--;
+    }
+    updateReviewsCarousel();
+}
+
+function goToCustomerReview(index) {
+    currentReviewIndex = index;
+    updateReviewsCarousel();
+}
+
+window.addEventListener('resize', () => {
+    if (document.getElementById('reviewsTrack')) {
+        updateReviewsCarousel();
+    }
+});
+
+/* ─── HERO 3D MOUSE PARALLAX TILT ───────────────────────── */
+function initHeroParallax() {
+    const heroVisuals = document.querySelectorAll('.hero-split-visual');
+    if (!heroVisuals.length) return;
+
+    heroVisuals.forEach(visual => {
+        const stack = visual.querySelector('.hero-image-stack');
+        if (!stack) return;
+
+        visual.addEventListener('mousemove', (e) => {
+            const rect = visual.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            const tiltX = -(y / rect.height) * 10;
+            const tiltY = (x / rect.width) * 10;
+
+            stack.style.transform = `perspective(1000px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
+        });
+
+        visual.addEventListener('mouseleave', () => {
+            stack.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            stack.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        });
+
+        visual.addEventListener('mouseenter', () => {
+            stack.style.transition = 'transform 0.1s ease-out';
+        });
+    });
+}
+
 /* ─── DASHBOARD SIDEBAR TOGGLE ─────────────────────────── */
 function toggleDashboardSidebar() {
     const sidebar = document.querySelector('.dashboard-sidebar');
@@ -765,4 +859,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     animateCounters();
     initHeroSlider();
+    initHeroParallax();
+    if (document.getElementById('reviewsTrack')) {
+        updateReviewsCarousel();
+    }
 });
+
+

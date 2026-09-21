@@ -11,13 +11,8 @@
 </head>
 <body class="dashboard-body">
 
-<!-- Mobile Menu Button -->
-<button class="dashboard-mobile-toggle" onclick="toggleDashboardSidebar()" aria-label="Open Sidebar">
-    <i class="fas fa-bars"></i>
-</button>
-
 <!-- Backdrop -->
-<div class="dashboard-backdrop" onclick="toggleDashboardSidebar()"></div>
+<div class="dashboard-backdrop" id="dashboard-backdrop" onclick="toggleDashboardSidebar()"></div>
 
 <!-- ===== SIDEBAR ===== -->
 <aside class="dashboard-sidebar" id="dashboard-sidebar">
@@ -61,16 +56,8 @@
     </nav>
 
     <div class="sidebar-footer">
-        <div class="sidebar-footer-toggles">
-            <button onclick="toggleTheme()" class="sidebar-toggle-btn" title="Toggle Theme">
-                <i class="fas fa-moon theme-icon"></i>
-            </button>
-            <button onclick="toggleDir()" class="sidebar-toggle-btn" title="Toggle Direction">
-                <span class="dir-label" style="font-size:0.5625rem;font-weight:600;">LTR</span>
-            </button>
-        </div>
-        <a href="login.html" class="sidebar-link logout-link">
-            <i class="fas fa-sign-out-alt"></i> Logout
+        <a href="login.html" id="logout-btn" class="sidebar-link-logout" onclick="openLogoutModal(event);" role="button" aria-haspopup="dialog" aria-label="Log out of PedalCity Dashboard">
+            <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
         </a>
     </div>
 </aside>
@@ -79,9 +66,14 @@
 <main class="dashboard-main">
     <!-- Top Bar -->
     <header class="dashboard-topbar">
-        <div>
-            <h2 class="dashboard-page-title" id="dash-page-title">Overview</h2>
-            <p class="dashboard-page-subtitle" id="dash-page-subtitle">Welcome back, Rider!</p>
+        <div class="dashboard-topbar-left">
+            <button id="sidebar-toggle" class="dashboard-topbar-toggle" onclick="toggleDashboardSidebar()" aria-label="Toggle Sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div>
+                <h2 class="dashboard-page-title" id="dash-page-title">Overview</h2>
+                <p class="dashboard-page-subtitle" id="dash-page-subtitle">Welcome back, Rider!</p>
+            </div>
         </div>
         <div class="dashboard-topbar-actions">
             <div class="dashboard-search">
@@ -258,7 +250,7 @@
             </div>
             <div class="dash-bikes-grid">
                 <div class="dash-bike-card" data-category="city">
-                    <img src="assets/images/dashboard-bike-1.jpg" alt="City Cruiser">
+                    <img src="assets/images/bike-city-cruiser.jpg" alt="City Cruiser">
                     <div class="dash-bike-info">
                         <h4>City Cruiser</h4>
                         <p>7 Speed · Alloy · 14 kg</p>
@@ -270,7 +262,7 @@
                     <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
                 </div>
                 <div class="dash-bike-card" data-category="mountain">
-                    <img src="assets/images/dashboard-bike-2.jpg" alt="Mountain Explorer">
+                    <img src="assets/images/bike-mountain.jpg" alt="Mountain Explorer">
                     <div class="dash-bike-info">
                         <h4>Mountain Explorer</h4>
                         <p>21 Speed · Carbon · 16 kg</p>
@@ -282,7 +274,7 @@
                     <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
                 </div>
                 <div class="dash-bike-card" data-category="ebike">
-                    <img src="assets/images/dashboard-bike-3.jpg" alt="E-Bike Pro">
+                    <img src="assets/images/bike-ebike.jpg" alt="E-Bike Pro">
                     <div class="dash-bike-info">
                         <h4>E-Bike Pro</h4>
                         <p>250W · 60km Range · Alloy</p>
@@ -294,7 +286,7 @@
                     <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
                 </div>
                 <div class="dash-bike-card" data-category="city">
-                    <img src="assets/images/dashboard-bike-4.jpg" alt="Tandem Explorer">
+                    <img src="assets/images/bike-tandem.jpg" alt="Tandem Explorer">
                     <div class="dash-bike-info">
                         <h4>Tandem Explorer</h4>
                         <p>7 Speed · 2-Seater · 22 kg</p>
@@ -318,7 +310,7 @@
                     <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
                 </div>
                 <div class="dash-bike-card" data-category="ebike">
-                    <img src="assets/images/bike-ebike.jpg" alt="E-City Commuter">
+                    <img src="assets/images/bike-ecity-commuter.jpg" alt="E-City Commuter">
                     <div class="dash-bike-info">
                         <h4>E-City Commuter</h4>
                         <p>350W · 80km Range · Carbon</p>
@@ -330,25 +322,25 @@
                     <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
                 </div>
                 <div class="dash-bike-card" data-category="mountain">
-                    <img src="assets/images/bike-mountain.jpg" alt="Trail Master Pro">
+                    <img src="assets/images/bike-gravel.jpg" alt="Gravel Explorer Carbon">
                     <div class="dash-bike-info">
-                        <h4>Trail Master Pro</h4>
-                        <p>27 Speed · Hydraulic Disc · 13 kg</p>
+                        <h4>Gravel Explorer Carbon</h4>
+                        <p>18 Speed · Carbon · 9.8 kg</p>
                         <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
                             <span class="card-price" style="font-size:1rem;">₹549<span>/day</span></span>
-                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 10</span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 14</span>
                         </div>
                     </div>
                     <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
                 </div>
                 <div class="dash-bike-card" data-category="city">
-                    <img src="assets/images/bike-city-cruiser.jpg" alt="Vintage Dutch Commuter">
+                    <img src="assets/images/bike-vintage.jpg" alt="Vintage Dutch Classic">
                     <div class="dash-bike-info">
-                        <h4>Vintage Dutch</h4>
-                        <p>3 Speed · Front Basket · 13 kg</p>
+                        <h4>Vintage Dutch Classic</h4>
+                        <p>3 Speed Nexus · Leather · 13 kg</p>
                         <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
-                            <span class="card-price" style="font-size:1rem;">₹249<span>/day</span></span>
-                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 15</span>
+                            <span class="card-price" style="font-size:1rem;">₹349<span>/day</span></span>
+                            <span style="font-size:0.6875rem;color:var(--green);font-weight:600;"><span class="avail-dot" style="width:6px;height:6px;"></span> 16</span>
                         </div>
                     </div>
                     <button class="btn btn-primary btn-sm w-full" onclick="switchDashTab('book', document.getElementById('nav-book'))">Book Now</button>
@@ -426,10 +418,10 @@
                 <table class="dash-table">
                     <thead>
                         <tr>
-                            <th>Booking ID</th>
+                            <th class="col-hide-mobile">Booking ID</th>
                             <th>Bicycle</th>
-                            <th>Date</th>
-                            <th>Duration</th>
+                            <th class="col-hide-mobile">Date</th>
+                            <th class="col-hide-mobile">Duration</th>
                             <th>Amount</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -437,61 +429,84 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code>PC-2026-0045</code></td>
-                            <td>Mountain Explorer</td>
-                            <td>Sep 18, 2026</td>
-                            <td>Full-Day</td>
-                            <td>₹499</td>
+                            <td class="col-hide-mobile"><code>PC-0045</code></td>
+                            <td>
+                                <strong>Mountain Explorer</strong>
+                                <span class="dash-table-subtext mobile-only">PC-0045 · Sep 18 · Full-Day</span>
+                            </td>
+                            <td class="col-hide-mobile"><span class="table-date">Sep 18, 2026</span></td>
+                            <td class="col-hide-mobile">Full-Day</td>
+                            <td><strong>₹499</strong></td>
                             <td><span class="status-badge completed">Completed</span></td>
                             <td>
-                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')"><i class="fas fa-download"></i> Receipt</button>
-                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading signed agreement PDF...')"><i class="fas fa-file-signature"></i> Agreement</button>
+                                <div class="dash-table-actions">
+                                    <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')" title="Download Receipt"><i class="fas fa-download"></i> <span class="btn-text-desktop">Receipt</span></button>
+                                    <button class="btn btn-outline btn-xs col-hide-mobile" onclick="alert('Downloading signed agreement PDF...')" title="Download Agreement"><i class="fas fa-file-signature"></i> <span class="btn-text-desktop">Agreement</span></button>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code>PC-2026-0042</code></td>
-                            <td>City Cruiser</td>
-                            <td>Sep 15, 2026</td>
-                            <td>Half-Day</td>
-                            <td>₹349</td>
+                            <td class="col-hide-mobile"><code>PC-0042</code></td>
+                            <td>
+                                <strong>City Cruiser</strong>
+                                <span class="dash-table-subtext mobile-only">PC-0042 · Sep 15 · Half-Day</span>
+                            </td>
+                            <td class="col-hide-mobile"><span class="table-date">Sep 15, 2026</span></td>
+                            <td class="col-hide-mobile">Half-Day</td>
+                            <td><strong>₹349</strong></td>
                             <td><span class="status-badge completed">Completed</span></td>
                             <td>
-                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')"><i class="fas fa-download"></i> Receipt</button>
-                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading signed agreement PDF...')"><i class="fas fa-file-signature"></i> Agreement</button>
+                                <div class="dash-table-actions">
+                                    <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')" title="Download Receipt"><i class="fas fa-download"></i> <span class="btn-text-desktop">Receipt</span></button>
+                                    <button class="btn btn-outline btn-xs col-hide-mobile" onclick="alert('Downloading signed agreement PDF...')" title="Download Agreement"><i class="fas fa-file-signature"></i> <span class="btn-text-desktop">Agreement</span></button>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code>PC-2026-0038</code></td>
-                            <td>E-Bike Pro</td>
-                            <td>Sep 12, 2026</td>
-                            <td>Hourly (3h)</td>
-                            <td>₹297</td>
+                            <td class="col-hide-mobile"><code>PC-0038</code></td>
+                            <td>
+                                <strong>E-Bike Pro</strong>
+                                <span class="dash-table-subtext mobile-only">PC-0038 · Sep 12 · 3h</span>
+                            </td>
+                            <td class="col-hide-mobile"><span class="table-date">Sep 12, 2026</span></td>
+                            <td class="col-hide-mobile">Hourly (3h)</td>
+                            <td><strong>₹297</strong></td>
                             <td><span class="status-badge completed">Completed</span></td>
                             <td>
-                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')"><i class="fas fa-download"></i> Receipt</button>
-                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading signed agreement PDF...')"><i class="fas fa-file-signature"></i> Agreement</button>
+                                <div class="dash-table-actions">
+                                    <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')" title="Download Receipt"><i class="fas fa-download"></i> <span class="btn-text-desktop">Receipt</span></button>
+                                    <button class="btn btn-outline btn-xs col-hide-mobile" onclick="alert('Downloading signed agreement PDF...')" title="Download Agreement"><i class="fas fa-file-signature"></i> <span class="btn-text-desktop">Agreement</span></button>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code>PC-2026-0031</code></td>
-                            <td>Tandem Explorer</td>
-                            <td>Sep 8, 2026</td>
-                            <td>Full-Day</td>
-                            <td>₹599</td>
+                            <td class="col-hide-mobile"><code>PC-0031</code></td>
+                            <td>
+                                <strong>Tandem Explorer</strong>
+                                <span class="dash-table-subtext mobile-only">PC-0031 · Sep 8 · Full-Day</span>
+                            </td>
+                            <td class="col-hide-mobile"><span class="table-date">Sep 8, 2026</span></td>
+                            <td class="col-hide-mobile">Full-Day</td>
+                            <td><strong>₹599</strong></td>
                             <td><span class="status-badge completed">Completed</span></td>
                             <td>
-                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')"><i class="fas fa-download"></i> Receipt</button>
-                                <button class="btn btn-outline btn-xs" onclick="alert('Downloading signed agreement PDF...')"><i class="fas fa-file-signature"></i> Agreement</button>
+                                <div class="dash-table-actions">
+                                    <button class="btn btn-outline btn-xs" onclick="alert('Downloading receipt PDF...')" title="Download Receipt"><i class="fas fa-download"></i> <span class="btn-text-desktop">Receipt</span></button>
+                                    <button class="btn btn-outline btn-xs col-hide-mobile" onclick="alert('Downloading signed agreement PDF...')" title="Download Agreement"><i class="fas fa-file-signature"></i> <span class="btn-text-desktop">Agreement</span></button>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code>PC-2026-0025</code></td>
-                            <td>City Cruiser</td>
-                            <td>Sep 3, 2026</td>
-                            <td>Half-Day</td>
-                            <td>₹349</td>
+                            <td class="col-hide-mobile"><code>PC-0025</code></td>
+                            <td>
+                                <strong>City Cruiser</strong>
+                                <span class="dash-table-subtext mobile-only">PC-0025 · Sep 3 · Half-Day</span>
+                            </td>
+                            <td class="col-hide-mobile"><span class="table-date">Sep 3, 2026</span></td>
+                            <td class="col-hide-mobile">Half-Day</td>
+                            <td><strong>₹349</strong></td>
                             <td><span class="status-badge cancelled">Cancelled</span></td>
-                            <td><span style="font-size:0.75rem;color:var(--text-muted);">N/A</span></td>
+                            <td><span style="font-size:0.75rem;color:var(--text-muted);">-</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -629,8 +644,10 @@
             </div>
             <div class="settings-group">
                 <h4>Account</h4>
-                <button class="btn btn-outline btn-sm" onclick="alert('Password change email sent!')"><i class="fas fa-key"></i> Change Password</button>
-                <button class="btn btn-outline btn-sm" style="margin-left:0.5rem;color:var(--error);border-color:var(--error);" onclick="if(confirm('Are you sure you want to delete your account? This action cannot be undone.')) alert('Account deletion request submitted.');"><i class="fas fa-trash"></i> Delete Account</button>
+                <div class="settings-actions">
+                    <button class="btn btn-outline btn-sm" onclick="alert('Password change email sent!')"><i class="fas fa-key"></i> Change Password</button>
+                    <button class="btn btn-outline btn-sm btn-delete-account" onclick="if(confirm('Are you sure you want to delete your account? This action cannot be undone.')) alert('Account deletion request submitted.');"><i class="fas fa-trash"></i> Delete Account</button>
+                </div>
             </div>
         </div>
     </div>
@@ -683,15 +700,72 @@ function switchDashTab(tabId, linkEl) {
     document.getElementById('dash-page-title').textContent = t[0];
     document.getElementById('dash-page-subtitle').textContent = t[1];
 
-    // Close mobile sidebar
-    const sidebar = document.querySelector('.dashboard-sidebar');
-    const backdrop = document.querySelector('.dashboard-backdrop');
-    if (sidebar) sidebar.classList.remove('open');
-    if (backdrop) backdrop.classList.remove('open');
+    // Close mobile sidebar if open
+    if (typeof closeDashboardSidebar === 'function') {
+        closeDashboardSidebar();
+    } else {
+        const sidebar = document.querySelector('.dashboard-sidebar');
+        const backdrop = document.querySelector('.dashboard-backdrop');
+        if (sidebar) sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 
     // Prevent default link navigation
     if (event) event.preventDefault();
 }
+
+// --- Logout Confirmation Modal Handling ---
+function openLogoutModal(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const modal = document.getElementById('logout-modal');
+    const cancelBtn = document.getElementById('logout-cancel-btn');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (cancelBtn) cancelBtn.focus();
+    }
+}
+
+function closeLogoutModal() {
+    const modal = document.getElementById('logout-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLogoutModal();
+    }
+});
 </script>
+
+<!-- ============================================================ -->
+<!-- LOGOUT CONFIRMATION POPUP MODAL (2 Options) -->
+<!-- ============================================================ -->
+<div id="logout-modal" class="logout-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="logout-modal-title" onclick="if(event.target === this) closeLogoutModal();">
+    <div class="logout-modal-card">
+        <button id="logout-modal-close" class="logout-modal-close-btn" onclick="closeLogoutModal()" title="Close" aria-label="Close dialog">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="logout-modal-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+        <h3 id="logout-modal-title" class="logout-modal-title">Confirm Logout</h3>
+        <p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:1.5rem;line-height:1.6;">Are you sure you want to log out of your PedalCity dashboard?</p>
+        <div class="logout-modal-actions">
+            <!-- Option 1: Cancel -->
+            <button type="button" id="logout-cancel-btn" class="btn-logout-cancel" onclick="closeLogoutModal()">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+            <!-- Option 2: Yes, Log Out -->
+            <a href="login.html" id="logout-confirm-btn" class="btn-logout-confirm">
+                <i class="fas fa-sign-out-alt"></i> Yes, Log Out
+            </a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

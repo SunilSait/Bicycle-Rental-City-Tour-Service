@@ -225,7 +225,7 @@ function injectNav() {
 
     const mobileLinksHTML = links.map(l => {
         const isActive = page === l.href || (page === '' && l.href === 'index.html');
-        return `<a href="${l.href}" class="mob-link ${isActive ? 'active' : ''}">${l.label}</a>`;
+        return `<a href="${l.href}" class="mobile-nav-link ${isActive ? 'active' : ''}">${l.label}</a>`;
     }).join('');
 
     el.innerHTML = `
@@ -248,8 +248,8 @@ function injectNav() {
             <!-- Right Actions -->
             <div class="nav-actions">
                 <!-- RTL Toggle -->
-                <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction">
-                    <span class="dir-label" style="font-size:0.625rem;font-weight:600;">${isRTL ? 'RTL' : 'LTR'}</span>
+                <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction" aria-label="Toggle RTL">
+                    <span class="dir-label" style="font-size:0.625rem;font-weight:700;">${isRTL ? 'RTL' : 'LTR'}</span>
                 </button>
                 <!-- Theme Toggle -->
                 <button onclick="toggleTheme()" class="nav-icon-btn" title="Toggle Theme" aria-label="Toggle dark mode">
@@ -258,63 +258,91 @@ function injectNav() {
                 <!-- Sign In & Dashboard CTA Buttons -->
                 <a href="login.html" class="btn btn-outline btn-sm nav-btn-signin">Sign In</a>
                 <a href="dashboard.html" class="btn btn-primary btn-sm nav-btn-dashboard">Dashboard</a>
-                <!-- Mobile Hamburger -->
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
-                    <i class="fas fa-bars mobile-menu-icon"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Backdrop -->
-        <div class="mobile-backdrop" id="mobile-backdrop" onclick="toggleMobileMenu()"></div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-            ${mobileLinksHTML}
-            <div class="mob-actions" style="display:flex;gap:0.75rem;flex-direction:column;margin-top:1rem;">
-                <a href="login.html" class="btn btn-outline w-full">Sign In</a>
-                <a href="dashboard.html" class="btn btn-primary w-full">Dashboard</a>
-            </div>
-            <div class="mob-toggles">
-                <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction">
-                    <span class="dir-label" style="font-size:0.625rem;font-weight:600;">${isRTL ? 'RTL' : 'LTR'}</span>
-                </button>
-                <button onclick="toggleTheme()" class="nav-icon-btn" title="Toggle Theme">
-                    <i class="${isDark ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon'}"></i>
+                <!-- Mobile Hamburger (WireWise Reference) -->
+                <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileDrawer()">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Drawer Overlay (WireWise Reference Architecture) -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <div class="mobile-drawer-header">
+            <a href="index.html" class="nav-logo" aria-label="PedalCity Home" onclick="closeMobileDrawer()">
+                ${getLogoSVG(36)}
+                <div class="nav-logo-text">
+                    <span class="brand-top">PedalCity</span>
+                    <span class="brand-bottom">Bicycle Rental & City Tours</span>
+                </div>
+            </a>
+            <button class="mobile-drawer-close" id="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">
+                <i class="fas fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="mobile-drawer-body">
+            ${mobileLinksHTML}
+        </div>
+
+        <div class="mobile-drawer-footer">
+            <a href="dashboard.html" class="btn btn-primary btn-full" onclick="closeMobileDrawer()"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="login.html" class="btn btn-outline btn-full" onclick="closeMobileDrawer()"><i class="fas fa-user"></i> Sign In</a>
+            <div class="mobile-drawer-controls">
+                <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction" aria-label="Toggle RTL">
+                    <span class="dir-label" style="font-size:0.625rem;font-weight:700;">${isRTL ? 'RTL' : 'LTR'}</span>
+                </button>
+                <button onclick="toggleTheme()" class="nav-icon-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+                    <i class="${isDark ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon'}"></i>
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="navbar-spacer"></div>`;
 }
 
-function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const backdrop = document.getElementById('mobile-backdrop');
-    const icon = document.querySelector('.mobile-menu-icon');
-    if (!menu) return;
+function openMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    const hamburger = document.getElementById('hamburger-btn');
+    if (!drawer) return;
+    drawer.classList.add('open');
+    if (hamburger) {
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+    }
+    document.body.style.overflow = 'hidden';
+}
 
-    const isOpen = menu.classList.contains('open');
-    if (isOpen) {
-        menu.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('open');
-        if (icon) icon.className = 'fas fa-bars mobile-menu-icon';
+function closeMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    const hamburger = document.getElementById('hamburger-btn');
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    if (hamburger) {
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
+    document.body.style.overflow = '';
+}
+
+function toggleMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    if (drawer && drawer.classList.contains('open')) {
+        closeMobileDrawer();
     } else {
-        menu.classList.add('open');
-        if (backdrop) backdrop.classList.add('open');
-        if (icon) icon.className = 'fas fa-xmark mobile-menu-icon';
+        openMobileDrawer();
     }
 }
 
-document.addEventListener('click', function(e) {
-    const menu = document.getElementById('mobile-menu');
-    const backdrop = document.getElementById('mobile-backdrop');
-    const btn = document.querySelector('.mobile-menu-btn');
-    if (menu && menu.classList.contains('open') && !menu.contains(e.target) && btn && !btn.contains(e.target)) {
-        menu.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('open');
-        const icon = document.querySelector('.mobile-menu-icon');
-        if (icon) icon.className = 'fas fa-bars mobile-menu-icon';
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const drawer = document.getElementById('mobile-drawer');
+        if (drawer && drawer.classList.contains('open')) {
+            closeMobileDrawer();
+        }
+        if (typeof closeDashboardSidebar === 'function') {
+            closeDashboardSidebar();
+        }
     }
 });
 
@@ -450,6 +478,15 @@ function switchFilter(filterValue, groupSelector) {
             card.style.display = '';
         } else {
             card.style.display = 'none';
+        }
+    });
+
+    // Update dynamic centering for last child when odd number of visible cards
+    document.querySelectorAll('.grid-3, .grid-4').forEach(grid => {
+        const visibleCards = Array.from(grid.children).filter(c => c.style.display !== 'none');
+        grid.querySelectorAll('.centered-last-card').forEach(c => c.classList.remove('centered-last-card'));
+        if (visibleCards.length % 2 === 1 && visibleCards.length > 1) {
+            visibleCards[visibleCards.length - 1].classList.add('centered-last-card');
         }
     });
 }
@@ -846,8 +883,17 @@ function toggleDashboardSidebar() {
     const backdrop = document.querySelector('.dashboard-backdrop');
     if (!sidebar) return;
 
-    sidebar.classList.toggle('open');
-    if (backdrop) backdrop.classList.toggle('open');
+    const isOpen = sidebar.classList.toggle('open');
+    if (backdrop) backdrop.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen && window.innerWidth <= 1024 ? 'hidden' : '';
+}
+
+function closeDashboardSidebar() {
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    const backdrop = document.querySelector('.dashboard-backdrop');
+    if (sidebar) sidebar.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    document.body.style.overflow = '';
 }
 
 /* ─── INIT ON DOM READY ─────────────────────────────────── */

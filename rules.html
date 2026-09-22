@@ -105,43 +105,74 @@
 </section>
 
 <!-- INSURANCE COVERAGE -->
-<section class="section">
+<section class="section coverage-section">
     <div class="container">
         <div class="section-header animate-on-scroll">
-            <div class="section-label"><i class="fas fa-shield-alt"></i> Coverage</div>
+            <div class="section-label"><i class="fas fa-shield-alt"></i> Coverage Plans</div>
             <h2>Insurance Coverage</h2>
-            <p>Ride worry-free with our comprehensive insurance plans.</p>
+            <p>Ride worry-free with our comprehensive protection plans tailored for every journey.</p>
         </div>
-        <div class="grid grid-3 animate-on-scroll">
+        <div class="grid grid-3 animate-on-scroll coverage-grid">
+            <!-- Basic Card -->
             <div class="coverage-card">
-                <h4>Basic Coverage</h4>
-                <p style="color:var(--primary);font-family:var(--font-heading);font-weight:600;font-size:1.5rem;margin-bottom:1rem;">Free</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Third-party liability</li>
-                    <li><i class="fas fa-check"></i> Basic accident cover</li>
-                    <li><i class="fas fa-check"></i> Emergency support</li>
+                <div class="coverage-header">
+                    <div class="coverage-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="coverage-title">Basic Coverage</h3>
+                    <div class="coverage-price-wrap">
+                        <span class="coverage-price-amount">Free</span>
+                    </div>
+                </div>
+                <div class="coverage-divider"></div>
+                <ul class="coverage-features">
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Third-party liability</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Basic accident cover</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> 24/7 Emergency support</li>
                 </ul>
+                <a href="dashboard.html" class="btn btn-outline coverage-btn">Included by Default</a>
             </div>
-            <div class="coverage-card" style="border-color:var(--primary);">
-                <h4>Standard Coverage</h4>
-                <p style="color:var(--primary);font-family:var(--font-heading);font-weight:600;font-size:1.5rem;margin-bottom:1rem;">₹49 / day</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Everything in Basic</li>
-                    <li><i class="fas fa-check"></i> Tire & chain damage</li>
-                    <li><i class="fas fa-check"></i> Personal injury up to ₹50,000</li>
-                    <li><i class="fas fa-check"></i> Roadside assistance</li>
+
+            <!-- Standard Card (Popular) -->
+            <div class="coverage-card popular">
+                <div class="coverage-badge"><i class="fas fa-star"></i> MOST POPULAR</div>
+                <div class="coverage-header">
+                    <div class="coverage-icon popular-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="coverage-title">Standard Coverage</h3>
+                    <div class="coverage-price-wrap">
+                        <span class="coverage-price-currency">₹</span>
+                        <span class="coverage-price-amount">49</span>
+                        <span class="coverage-price-period">/ day</span>
+                    </div>
+                </div>
+                <div class="coverage-divider"></div>
+                <ul class="coverage-features">
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Everything in Basic</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Tire & chain damage waiver</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Personal injury up to ₹50,000</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> On-demand Roadside assistance</li>
                 </ul>
+                <a href="dashboard.html" class="btn btn-primary coverage-btn"><i class="fas fa-bolt"></i> Choose Standard</a>
             </div>
+
+            <!-- Premium Card -->
             <div class="coverage-card">
-                <h4>Premium Coverage</h4>
-                <p style="color:var(--primary);font-family:var(--font-heading);font-weight:600;font-size:1.5rem;margin-bottom:1rem;">₹99 / day</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Everything in Standard</li>
-                    <li><i class="fas fa-check"></i> Full damage coverage</li>
-                    <li><i class="fas fa-check"></i> Theft protection</li>
-                    <li><i class="fas fa-check"></i> Personal injury up to ₹2,00,000</li>
-                    <li><i class="fas fa-check"></i> Zero deposit required</li>
+                <div class="coverage-header">
+                    <div class="coverage-icon"><i class="fas fa-crown"></i></div>
+                    <h3 class="coverage-title">Premium Coverage</h3>
+                    <div class="coverage-price-wrap">
+                        <span class="coverage-price-currency">₹</span>
+                        <span class="coverage-price-amount">99</span>
+                        <span class="coverage-price-period">/ day</span>
+                    </div>
+                </div>
+                <div class="coverage-divider"></div>
+                <ul class="coverage-features">
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Everything in Standard</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Full vehicle damage protection</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Complete Theft protection</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Personal injury up to ₹2,00,000</li>
+                    <li><span class="check-icon"><i class="fas fa-check"></i></span> Zero security deposit required</li>
                 </ul>
+                <a href="dashboard.html" class="btn btn-outline coverage-btn"><i class="fas fa-shield-alt"></i> Choose Premium</a>
             </div>
         </div>
     </div>

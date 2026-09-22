@@ -6873,7 +6873,7 @@ bdi,
 
 .reviews-carousel-viewport {
     width: 100%;
-    max-width: 100%;
+    max-width: 960px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -6897,14 +6897,14 @@ bdi,
     background: var(--bg-card);
     border: 1px solid var(--border-default);
     border-radius: var(--radius-xl);
-    padding: 2.25rem 2.5rem;
+    padding: 1.5rem 1.75rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
     position: relative;
-    min-height: 220px;
+    min-height: 170px;
 }
 
 .review-carousel-card:hover {
@@ -6917,7 +6917,7 @@ bdi,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.875rem;
 }
 
 .review-stars {
@@ -6941,11 +6941,11 @@ bdi,
 }
 
 .review-quote-text {
-    font-size: 1.0625rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--text-body);
     font-weight: 450;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
     flex-grow: 1;
 }
 

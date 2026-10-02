@@ -463,6 +463,7 @@ function toggleFAQ(el) {
     document.querySelectorAll('.faq-item.active').forEach(faq => faq.classList.remove('active'));
     if (!wasActive) item.classList.add('active');
 }
+const toggleFaq = toggleFAQ;
 
 /* ─── TAB SYSTEM / FILTER ─────────────────────────────────── */
 function switchFilter(filterValue, groupSelector) {
